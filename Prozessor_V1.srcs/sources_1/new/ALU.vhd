@@ -47,7 +47,7 @@ begin
   -- type   : combinational
   -- inputs : OPA, OPB, OPCODE
   -- outputs: erg
-  kern_ALU: process (OPA, OPB, OPCODE)
+  kern_ALU: process (OPA, OPB, OPCODE,c)
   begin  -- process kern_ALU
     erg <= "00000000";                  -- verhindert Latches
     case OPCODE is
@@ -122,6 +122,7 @@ begin
 
     c <= '0';                           -- um Latches zu verhindern
     v <= '0';
+    h <= '0';
     
     case OPCODE is
       -- ADD

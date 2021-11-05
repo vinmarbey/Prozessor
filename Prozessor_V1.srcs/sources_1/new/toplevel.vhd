@@ -47,7 +47,23 @@ entity toplevel is
 
     -- ports to "ALU_1"
     --Status : out STD_LOGIC_VECTOR (7 downto 0);
-    Result : out STD_LOGIC_VECTOR (7 downto 0));
+    Result : out STD_LOGIC_VECTOR (7 downto 0);
+    
+    -- GPIO
+    PIND    : in std_logic_vector(7 downto 0);
+    PINC    : in std_logic_vector(7 downto 0);
+    PINB    : in std_logic_vector(7 downto 0);
+    PORTC   : out std_logic_vector(7 downto 0);
+    PORTB   : out std_logic_vector(7 downto 0);
+    SER     : out std_logic_vector(7 downto 0);
+    SEG0_N  : out std_logic_vector(7 downto 0);
+    SEG1_N  : out std_logic_vector(7 downto 0);
+    SEG2_N  : out std_logic_vector(7 downto 0);
+    SEG3_N  : out std_logic_vector(7 downto 0)
+    );
+    
+    
+    
 
 end toplevel;
 
@@ -170,7 +186,17 @@ architecture Behavioral of toplevel is
       DM_Data_in : in STD_LOGIC_VECTOR (7 downto 0);
       DM_Addr : in STD_LOGIC_VECTOR (9 downto 0);
       w_e_data : in STD_LOGIC;
-      DM_Data_out : out STD_LOGIC_VECTOR (7 downto 0));
+      DM_Data_out : out STD_LOGIC_VECTOR (7 downto 0);
+      PIND         : in std_logic_vector (7 downto 0);
+           PINC         : in std_logic_vector (7 downto 0);
+           PINB         : in std_logic_vector (7 downto 0);
+           PORTC        : out std_logic_vector(7 downto 0);
+           PORTB        : out std_logic_vector(7 downto 0);
+           SER        : out std_logic_vector(7 downto 0);
+           SEG0_N        : out std_logic_vector(7 downto 0);
+           SEG1_N        : out std_logic_vector(7 downto 0);
+           SEG2_N        : out std_logic_vector(7 downto 0);
+           SEG3_N        : out std_logic_vector(7 downto 0));
   end component;
 
 begin
@@ -250,7 +276,17 @@ begin
       DM_Data_in    => data_opb,
       DM_Addr       => Z_Addr,
       w_e_Data      => w_e_Data,
-      DM_Data_out   => DM_Data_out);
+      DM_Data_out   => DM_Data_out,
+      PIND =>PIND,
+    PINC =>PINC,
+    PINB =>PINB,
+    PORTC =>PORTC,
+    PORTB =>PORTB,
+    SER =>SER,
+    SEG0_N  =>SEG0_N,
+    SEG1_N =>SEG1_N,
+    SEG2_N =>SEG2_N,
+    SEG3_N =>SEG3_N);
 
   --PM_Data <=  Instr(11 downto 8)&Instr(3 downto 0);
   

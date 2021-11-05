@@ -61,6 +61,6 @@ begin
   -- nebenlaeufiges Lesen der Registerspeicher
   data_opa <= register_speicher(to_integer(unsigned(addr_opa)));
   data_opb <= register_speicher(to_integer(unsigned(addr_opb)));
-  Z_Addr <= register_speicher(30)(1 downto 0)&register_speicher(30);
+  Z_Addr <= register_speicher(31)(1 downto 0)&register_speicher(30);
   
 end Behavioral;
