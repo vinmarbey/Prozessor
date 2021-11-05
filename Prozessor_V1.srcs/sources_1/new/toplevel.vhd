@@ -65,7 +65,7 @@ architecture Behavioral of toplevel is
   -- outputs of "decoder_1"
    signal  addr_opa    : std_logic_vector(4 downto 0);
    signal  addr_opb    : std_logic_vector(4 downto 0);
-   signal  OPCODE      : std_logic_vector(3 downto 0);
+   signal  OPCODE      : std_logic_vector(4 downto 0);
    signal  w_e_regfile : std_logic;
    signal  w_e_SREG    : std_logic_vector (7 downto 0);
    signal w_e_Data     : std_logic;
@@ -120,7 +120,7 @@ architecture Behavioral of toplevel is
       SREG_OUT      : in std_logic_vector(7 downto 0);
       addr_opa      : out std_logic_vector(4 downto 0);
       addr_opb      : out std_logic_vector(4 downto 0);
-      OPCODE        : out std_logic_vector(3 downto 0);
+      OPCODE        : out std_logic_vector(4 downto 0);
       w_e_regfile   : out std_logic;
       w_e_SREG      : out std_logic_vector(7 downto 0);
       w_e_Data      : out std_logic;
@@ -147,7 +147,7 @@ architecture Behavioral of toplevel is
 
   component ALU
     port (
-      OPCODE : in  STD_LOGIC_VECTOR (3 downto 0);
+      OPCODE : in  STD_LOGIC_VECTOR (4 downto 0);
       OPA    : in  STD_LOGIC_VECTOR (7 downto 0);
       OPB    : in  STD_LOGIC_VECTOR (7 downto 0);
       RES    : out STD_LOGIC_VECTOR (7 downto 0);
