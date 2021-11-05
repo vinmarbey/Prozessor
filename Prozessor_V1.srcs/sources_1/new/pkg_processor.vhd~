@@ -1,0 +1,47 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+package pkg_processor is
+
+  constant op_add       : std_logic_vector(5 downto 0) := "000000";  -- Addition
+  constant op_NOP       : std_logic_vector(5 downto 0) := "000000";  -- NoOperation (als Addition implementiert, die Ergebnisse
+							     -- werden aber nicht gespeichert...
+  constant op_sub       : std_logic_vector(5 downto 0) := "000001";  -- Subtraction
+  constant op_or        : std_logic_vector(5 downto 0) := "000010";  -- bitwise OR
+  constant op_ldi       : std_logic_vector(5 downto 0) := "000011";  -- Load immediate
+ 
+  constant op_lsl       : std_logic_vector(5 downto 0) := "000100";  -- Load immediate
+  constant op_cp        : std_logic_vector(5 downto 0) := "000101";  -- compare
+  constant op_rol       : std_logic_vector(5 downto 0) := "000110";  -- Load immediate
+  constant op_adc       : std_logic_vector(5 downto 0) := "000111";  -- Add with Carry
+  
+  constant op_and       : std_logic_vector(5 downto 0) := "001000";  -- bitwiseAND
+  constant op_eor       : std_logic_vector(5 downto 0) := "001001";  -- bitwise
+                                                                     -- exclusive OR
+  constant op_or        : std_logic_vector(5 downto 0) := "001010";  -- Load immediate
+  constant op_mov       : std_logic_vector(5 downto 0) := "001011";  -- Load immediate
+  constant op_cpi       : std_logic_vector(5 downto 0) := "001100";  -- Load immediate
+  constant op_subi      : std_logic_vector(5 downto 0) := "001101";  -- Load immediate
+  constant op_ori       : std_logic_vector(5 downto 0) := "001110";  -- Load immediate
+  constant op_andi      : std_logic_vector(5 downto 0) := "001111";  -- Load immediate
+  
+  constant op_ld        : std_logic_vector(5 downto 0) := "010000";  -- Load immediate
+  constant op_st        : std_logic_vector(5 downto 0) := "010001";  -- Load immediate
+  constant op_com       : std_logic_vector(5 downto 0) := "010010";  -- Load immediate
+  constant op_asr       : std_logic_vector(5 downto 0) := "010011";  -- Load immediate
+  constant op_dec       : std_logic_vector(5 downto 0) := "010100";  -- Load immediate
+  constant op_inc       : std_logic_vector(5 downto 0) := "010101";  -- Load immediate
+  constant op_lsr       : std_logic_vector(5 downto 0) := "010110";  -- Load immediate
+  constant op_rjmp      : std_logic_vector(5 downto 0) := "010111";  -- Load immediate
+  constant op_brbs      : std_logic_vector(5 downto 0) := "011000";  -- Load immediate
+  constant op_brbc      : std_logic_vector(5 downto 0) := "011001";  -- Load immediate
+  constant op_sec       : std_logic_vector(5 downto 0) := "011010";  -- Load immediate
+  constant op_clc       : std_logic_vector(5 downto 0) := "011100";  -- Load immediate
+  constant op_push      : std_logic_vector(5 downto 0) := "011101";  -- Load immediate
+  constant op_pop       : std_logic_vector(5 downto 0) := "011110";  -- Load immediate
+  constant op_rcall     : std_logic_vector(5 downto 0) := "011111";  -- Load immediate
+  
+  constant op_ret       : std_logic_vector(5 downto 0) := "100000";  -- Load immediate
+
+
+end pkg_processor;

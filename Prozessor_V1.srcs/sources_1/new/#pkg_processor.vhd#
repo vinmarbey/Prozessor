@@ -1,0 +1,49 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+package pkg_processor is
+
+  constant op_add       : std_logic_vector(5 downto 0) := "000000";  -- Addition
+  constant op_NOP       : std_logic_vector(5 downto 0) := "000000";  -- NoOperation (als Addition implementiert, die Ergebnisse
+							     -- werden aber nicht gespeichert...
+  constant op_sub       : std_logic_vector(5 downto 0) := "000001";  -- Subtraction
+  constant op_or        : std_logic_vector(5 downto 0) := "000010";  -- bitwise OR
+  constant op_ldi       : std_logic_vector(5 downto 0) := "000011";  -- Load immediate
+ 
+  constant op_lsl       : std_logic_vector(5 downto 0) := "000100";  -- logical shift left
+  --kann eig weg
+  constant op_cp        : std_logic_vector(5 downto 0) := "000101";  -- compare
+  constant op_rol       : std_logic_vector(5 downto 0) := "000110";  -- Rotate Left trough Carry
+  --lann eig weg
+  constant op_adc       : std_logic_vector(5 downto 0) := "000111";  -- Add with Carry
+  
+  constant op_and       : std_logic_vector(5 downto 0) := "001000";  -- bitwiseAND
+  constant op_eor       : std_logic_vector(5 downto 0) := "001001";  -- bitwise
+                                                                     -- exclusive OR
+  -- or war doppelt
+  constant op_mov       : std_logic_vector(5 downto 0) := "001011";  -- Copy Regster
+  constant op_cpi       : std_logic_vector(5 downto 0) := "001100";  -- Compare with Immediate
+  constant op_subi      : std_logic_vector(5 downto 0) := "001101";  -- Subtract Immediate
+  constant op_ori       : std_logic_vector(5 downto 0) := "001110";  -- bitwise OR with immediate
+  constant op_andi      : std_logic_vector(5 downto 0) := "001111";  -- Load immediate
+  
+  constant op_ld        : std_logic_vector(5 downto 0) := "010000";  -- Load Indirect From Data Space to Register using Index Z
+  constant op_st        : std_logic_vector(5 downto 0) := "010001";  --  Store Indirect From Register to Data Space using Index Z
+  constant op_com       : std_logic_vector(5 downto 0) := "010010";  -- One’s Complement
+  constant op_asr       : std_logic_vector(5 downto 0) := "010011";  -- Arithmetic Shift Right
+  constant op_dec       : std_logic_vector(5 downto 0) := "010100";  -- Decrement
+  constant op_inc       : std_logic_vector(5 downto 0) := "010101";  -- Increment
+  constant op_lsr       : std_logic_vector(5 downto 0) := "010110";  -- Logical Shift Right
+  constant op_rjmp      : std_logic_vector(5 downto 0) := "010111";  -- Relative Jump
+  constant op_brbs      : std_logic_vector(5 downto 0) := "011000";  -- Load immediate
+  constant op_brbc      : std_logic_vector(5 downto 0) := "011001";  -- Load immediate
+  constant op_sec       : std_logic_vector(5 downto 0) := "011010";  -- Load immediate
+  constant op_clc       : std_logic_vector(5 downto 0) := "011100";  -- Load immediate
+  constant op_push      : std_logic_vector(5 downto 0) := "011101";  -- Push Register on Stack
+  constant op_pop       : std_logic_vector(5 downto 0) := "011110";  -- Pop Register from Stack
+  constant op_rcall     : std_logic_vector(5 downto 0) := "011111";  -- Relative Call to Subroutine
+  
+  constant op_ret       : std_logic_vector(5 downto 0) := "100000";  -- Load immediate
+
+
+end pkg_processor;
