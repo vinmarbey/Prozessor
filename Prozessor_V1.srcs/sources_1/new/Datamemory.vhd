@@ -38,8 +38,8 @@ entity Datamemory is
            DM_Data_in   : in STD_LOGIC_VECTOR (7 downto 0);
            DM_Addr      : in STD_LOGIC_VECTOR (9 downto 0);
            w_e_data     : in STD_LOGIC;
-           inc_e_Stackpointer :in std_logic;
-           dec_e_Stackpointer :in std_logic;
+           pop_Stack :in std_logic;
+           push_Stack :in std_logic;
            DM_Data_out  : out STD_LOGIC_VECTOR (7 downto 0);
            PIND         : in std_logic_vector (7 downto 0);
            PINC         : in std_logic_vector (7 downto 0);
@@ -64,33 +64,32 @@ architecture Behavioral of Datamemory is
     signal pind_temp        : std_logic_vector(7 downto 0);
     signal pinc_temp        : std_logic_vector(7 downto 0);
     signal pinb_temp        : std_logic_vector(7 downto 0);
-    signal stackpointer     : std_logic_vector(9 downto 0);
+    signal stackpointer_tp     : std_logic_vector(9 downto 0);
     --signal i2c_scr_in_temp  : std_logic_vector(7 downto 0);
     --signal i2c_darr_temp    : std_logic_vector(7 downto 0);
     
 begin
-    process (clk, reset, inc_e_Stackpointer, dec_e_Stackpointer, DM_Addr,stackpointer, pind_temp, pinc_temp, pinb_temp, RAM)
-    variable stack_counter_write    : std_logic_vector(9 downto 0);
-    variable stack_counter_read    : std_logic_vector(9 downto 0);
+    process (clk, RAM, push_Stack,reset)
+    variable stackpointer : std_logic_vector(9 downto 0);
     begin
-      
+      stackpointer := stackpointer_tp;
       
         if (clk'event and clk = '1') then
-            if (w_e_data = '1') then
+            if (reset = '1') then
+                stackpointer := "1111111111";
+            elsif (w_e_data = '1') and (push_Stack = '0')  then
                 RAM(to_integer(unsigned(DM_Addr))) <= DM_Data_in;
-        -----------------------------------------------------
-        -- STACK
-        -----------------------------------------------------
-            elsif reset = '1' then
-                stack_counter_write := "1111111111";
-                stackpointer<=stack_counter_write;
-            elsif dec_e_Stackpointer = '1' then
-                stack_counter_write := stackpointer;
-                RAM(to_integer(unsigned(stack_counter_write))) <= DM_Data_in;
-                stack_counter_write := std_logic_vector(unsigned(stack_counter_write) - 1);
-                stackpointer<=stack_counter_write;
+            elsif (w_e_data = '1') and (push_Stack = '1')  then
+                RAM(to_integer(unsigned(stackpointer))) <= DM_Data_in;
+                stackpointer := std_logic_vector(unsigned(stackpointer) - 1);
             end if;
             
+--            if (pop_Stack = '1') then
+--                stackpointer := stackpointer + 1;
+--                DM_Data_out <= RAM(stackpointer);
+--            else
+--                DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
+--            end if;
             
             --Memory_Mapped Input
             pind_temp <= pind;
@@ -98,40 +97,54 @@ begin
             pinb_temp <= pinb;
 --            i2c_scr_in_temp <= i2c_scr_in;
 --            i2c_darr_temp <= i2c_darr;
+
+            stackpointer_tp<=stackpointer;
         end if;
-    --end process;
-    
-    --Memory_Mapped Output
-    --process (DM_Addr,inc_e_Stackpointer,stackpointer, pind_temp, pinc_temp, pinb_temp, RAM)
-    
-    --begin
-      
-      
-      case DM_Addr is
-        when "0000110000" =>
-          DM_Data_out <= pind_temp;
-        when "0000110011" =>
-          DM_Data_out <= pinc_temp;
-        when "0000110110" =>
-          DM_Data_out <= pinb_temp;
---        when "0001010000" =>
---          DM_Data_out <= i2c_scr_in_temp;
---        when "0001010010" =>
---          DM_Data_out <= i2c_darr_temp;
-        when others => 
-          DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
-        -----------------------------------------------------
-        -- STACK
-        -----------------------------------------------------
-            if inc_e_Stackpointer = '1' then
-                stack_counter_read := stackpointer;
-                stack_counter_read := std_logic_vector(unsigned(stack_counter_read) + 1);
-                DM_Data_out <= RAM(to_integer(unsigned(stack_counter_read)));
-                stackpointer<=stack_counter_read;
-            end if;
-      end case;
-      
     end process;
+    
+    process (RAM, pop_Stack, stackpointer_tp)
+    variable stackpointer : std_logic_vector(9 downto 0);
+    begin
+        stackpointer := stackpointer_tp;
+--    DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
+        if (pop_Stack = '1') then
+            stackpointer := std_logic_vector(unsigned(stackpointer) + 1);
+            DM_Data_out <= RAM(to_integer(unsigned(stackpointer)));
+        else
+            DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
+        end if;
+     end process;
+--    --Memory_Mapped Output
+--    --process (DM_Addr,inc_e_Stackpointer,stackpointer, pind_temp, pinc_temp, pinb_temp, RAM)
+    
+--    --begin
+      
+      
+--      case DM_Addr is
+--        when "0000110000" =>
+--          DM_Data_out <= pind_temp;
+--        when "0000110011" =>
+--          DM_Data_out <= pinc_temp;
+--        when "0000110110" =>
+--          DM_Data_out <= pinb_temp;
+----        when "0001010000" =>
+----          DM_Data_out <= i2c_scr_in_temp;
+----        when "0001010010" =>
+----          DM_Data_out <= i2c_darr_temp;
+--        when others => 
+--          DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
+--        -----------------------------------------------------
+--        -- STACK
+--        -----------------------------------------------------
+--            if inc_e_Stackpointer = '1' then
+--                stack_counter_read := stackpointer;
+--                stack_counter_read := std_logic_vector(unsigned(stack_counter_read) + 1);
+--                DM_Data_out <= RAM(to_integer(unsigned(stack_counter_read)));
+--                stackpointer<=stack_counter_read;
+--            end if;
+--      end case;
+      
+--    end process;
       
 --    DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
     

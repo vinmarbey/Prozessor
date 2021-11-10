@@ -42,8 +42,8 @@ entity decoder is
     data_immediate: out std_logic_vector(7 downto 0);   -- immediate data write to Registerfile
     sel_immediate: out std_logic;                       -- select signal for either using ALU output ('0') or immediate data ('0')
     sel_immediate_to_ALU :out std_logic;                -- immediate data write to ALU - OPB
-    inc_e_Stackpointer :out std_logic;                  -- increment enable for stackpointer
-    dec_e_Stackpointer :out std_logic;                  -- decrement enable for stackpointer
+    pop_Stack :out std_logic;                  -- increment enable for stackpointer
+    push_Stack :out std_logic;                  -- decrement enable for stackpointer
     add_PC      : out std_logic_vector (8 downto 0);    -- add figure to Programcounter; for RJMP and RCALL
     pause_PC    : out std_logic                         -- pause increment Programcounter; for RCALL and RET
     
@@ -81,8 +81,8 @@ begin  -- Behavioral
     sel_immediate <= '0';
     sel_immediate_to_ALU <= '0';
     add_PC <= "000000000";
-    inc_e_Stackpointer <= '0';
-    dec_e_Stackpointer <= '0';
+    pop_Stack <= '0';
+    push_Stack <= '0';
     pause_PC <= '0';
     
     
@@ -210,7 +210,7 @@ begin  -- Behavioral
               when "10000000000" =>
                 addr_opa <= Instr(8 downto 4);
                 w_e_regfile <= '1';
-                sel_data <= '0';
+                sel_data <= '1';
               -- ST
               when "10000010000" =>
                 addr_opb <= Instr(8 downto 4);
@@ -250,11 +250,12 @@ begin  -- Behavioral
               -- PUSH
               when "10010011111" =>
                 addr_opb <= Instr(8 downto 4);
-                dec_e_Stackpointer <= '1';
+                push_Stack <= '1';
+                w_e_data <= '1';
               -- POP
               when "10010001111" =>
                 addr_opa <= Instr(8 downto 4);
-                inc_e_Stackpointer <= '1';
+                pop_Stack <= '1';
                 w_e_regfile <= '1';
                 sel_Data <= '1';
               when others =>
