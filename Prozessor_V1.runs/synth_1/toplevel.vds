@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Nov 10 16:48:28 2021
-# Process ID: 8080
+# Start of session at: Wed Nov 10 17:20:29 2021
+# Process ID: 12972
 # Current directory: C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1
 # Command line: vivado.exe -log toplevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source toplevel.tcl
 # Log file: C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/toplevel.vds
@@ -16,11 +16,13 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2444 
+INFO: Helper process launched with PID 4552 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 768.461 ; gain = 234.180
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 779.602 ; gain = 234.598
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'toplevel' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:70]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/.Xil/Vivado-12972-DESKTOP-F4RPBPN/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz_0_1' of component 'clk_wiz_0' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:253]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/.Xil/Vivado-12972-DESKTOP-F4RPBPN/realtime/clk_wiz_0_stub.vhdl:13]
 INFO: [Synth 8-3491] module 'Program_Counter' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:31' bound to instance 'Program_Counter_1' of component 'Program_Counter' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:259]
 INFO: [Synth 8-638] synthesizing module 'Program_Counter' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'Program_Counter' (1#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:41]
@@ -41,9 +43,6 @@ INFO: [Synth 8-638] synthesizing module 'SREG' [C:/Users/vinma/Xilinx_Projekte/P
 INFO: [Synth 8-256] done synthesizing module 'SREG' (6#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:41]
 INFO: [Synth 8-3491] module 'Datamemory' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:35' bound to instance 'Datamemory_1' of component 'Datamemory' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:327]
 INFO: [Synth 8-638] synthesizing module 'Datamemory' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:61]
-WARNING: [Synth 8-614] signal 'pind_temp' is read in the process but is not in the sensitivity list [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:105]
-WARNING: [Synth 8-614] signal 'pinc_temp' is read in the process but is not in the sensitivity list [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:105]
-WARNING: [Synth 8-614] signal 'pinb_temp' is read in the process but is not in the sensitivity list [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:105]
 WARNING: [Synth 8-6014] Unused sequential element stackpointer_reg was removed.  [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:75]
 INFO: [Synth 8-256] done synthesizing module 'Datamemory' (7#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:61]
 INFO: [Synth 8-3491] module 'seven_segment' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:34' bound to instance 'Seven_segment_1' of component 'seven_segment' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:348]
@@ -51,7 +50,7 @@ INFO: [Synth 8-638] synthesizing module 'seven_segment' [C:/Users/vinma/Xilinx_P
 INFO: [Synth 8-256] done synthesizing module 'seven_segment' (8#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'toplevel' (9#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:70]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 958.770 ; gain = 424.488
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 969.578 ; gain = 424.574
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -64,51 +63,47 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 958.770 ; gain = 424.488
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 969.578 ; gain = 424.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 958.770 ; gain = 424.488
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 969.578 ; gain = 424.574
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.289 . Memory (MB): peak = 958.770 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.253 . Memory (MB): peak = 969.578 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_0_1'
+Finished Parsing XDC File [c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_0_1'
 Parsing XDC File [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'clk_board'. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:11]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:11]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'clk_board'. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:12]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:12]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'clk_board'. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:13]
-CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_board]'. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:13]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
 Finished Parsing XDC File [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/toplevel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/toplevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1053.223 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1073.246 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.119 . Memory (MB): peak = 1053.223 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.108 . Memory (MB): peak = 1073.246 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1053.223 ; gain = 518.941
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1073.246 ; gain = 528.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1053.223 ; gain = 518.941
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1073.246 ; gain = 528.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk_board. (constraint file  c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_board. (constraint file  c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for clk_wiz_0_1. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1053.223 ; gain = 518.941
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1073.246 ; gain = 528.242
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "OPCODE" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "w_e_regfile" won't be mapped to RAM because it is too sparse
@@ -129,7 +124,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'seven
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'seven_segment'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:12 ; elapsed = 00:01:20 . Memory (MB): peak = 1053.223 ; gain = 518.941
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 1073.246 ; gain = 528.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -139,7 +134,7 @@ Report RTL Partitions:
 |1     |Datamemory__GB0 |           1|     37234|
 |2     |Datamemory__GB1 |           1|     11520|
 |3     |Datamemory__GB2 |           1|     14429|
-|4     |toplevel__GC0   |           1|      2884|
+|4     |toplevel__GC0   |           1|      2853|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -312,7 +307,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:46 ; elapsed = 00:03:09 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:19 ; elapsed = 00:02:26 . Memory (MB): peak = 1259.473 ; gain = 714.469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -322,35 +317,32 @@ Report RTL Partitions:
 |1     |Datamemory__GB0 |           1|     29777|
 |2     |Datamemory__GB1 |           1|      1278|
 |3     |Datamemory__GB2 |           1|      1390|
-|4     |toplevel__GC0   |           1|       713|
+|4     |toplevel__GC0   |           1|       686|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:00 ; elapsed = 00:03:24 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:30 ; elapsed = 00:02:36 . Memory (MB): peak = 1259.473 ; gain = 714.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:00 ; elapsed = 00:03:24 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Timing Optimization : Time (s): cpu = 00:03:35 ; elapsed = 00:03:43 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+----------------+------------+----------+
-|      |RTL Partition   |Replication |Instances |
-+------+----------------+------------+----------+
-|1     |Datamemory__GB0 |           1|     29777|
-|2     |Datamemory__GB1 |           1|      1278|
-|3     |Datamemory__GB2 |           1|      1390|
-|4     |toplevel__GC0   |           1|       713|
-+------+----------------+------------+----------+
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |toplevel_GT0  |           1|     33132|
++------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:06 ; elapsed = 00:03:31 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Technology Mapping : Time (s): cpu = 00:03:48 ; elapsed = 00:03:55 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -374,13 +366,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:31 ; elapsed = 00:03:58 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished IO Insertion : Time (s): cpu = 00:04:04 ; elapsed = 00:04:11 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:31 ; elapsed = 00:03:58 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:04 ; elapsed = 00:04:11 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -399,91 +391,92 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:32 ; elapsed = 00:03:59 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:06 ; elapsed = 00:04:13 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:32 ; elapsed = 00:04:00 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:06 ; elapsed = 00:04:13 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:33 ; elapsed = 00:04:00 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:07 ; elapsed = 00:04:14 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:33 ; elapsed = 00:04:00 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:07 ; elapsed = 00:04:14 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |     7|
-|3     |LUT1   |    20|
-|4     |LUT2   |   147|
-|5     |LUT3   |    78|
-|6     |LUT4   |   492|
-|7     |LUT5   |   181|
-|8     |LUT6   |  5964|
-|9     |MUXF7  |  2168|
-|10    |MUXF8  |  1040|
-|11    |FDRE   |  8338|
-|12    |FDSE   |    77|
-|13    |IBUF   |    23|
-|14    |OBUF   |    36|
-+------+-------+------+
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |clk_wiz_0_bbox_0 |     1|
+|2     |CARRY4           |     7|
+|3     |LUT1             |    26|
+|4     |LUT2             |   169|
+|5     |LUT3             |    54|
+|6     |LUT4             |   200|
+|7     |LUT5             |   258|
+|8     |LUT6             |  6097|
+|9     |MUXF7            |  2176|
+|10    |MUXF8            |  1028|
+|11    |FDRE             |  8318|
+|12    |FDSE             |    76|
+|13    |IBUF             |    22|
+|14    |OBUF             |    28|
++------+-----------------+------+
 
 Report Instance Areas: 
 +------+--------------------+----------------+------+
 |      |Instance            |Module          |Cells |
 +------+--------------------+----------------+------+
-|1     |top                 |                | 18572|
+|1     |top                 |                | 18460|
 |2     |  ALU_1             |ALU             |     4|
-|3     |  Datamemory_1      |Datamemory      | 16997|
-|4     |  Program_Counter_1 |Program_Counter |   201|
-|5     |  Reg_File_1        |Reg_File        |  1282|
-|6     |  Seven_segment_1   |seven_segment   |    28|
+|3     |  Datamemory_1      |Datamemory      | 16705|
+|4     |  Program_Counter_1 |Program_Counter |   191|
+|5     |  Reg_File_1        |Reg_File        |  1489|
+|6     |  Seven_segment_1   |seven_segment   |    20|
 +------+--------------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:33 ; elapsed = 00:04:00 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:07 ; elapsed = 00:04:14 . Memory (MB): peak = 1372.867 ; gain = 827.863
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:04 ; elapsed = 00:03:53 . Memory (MB): peak = 1248.785 ; gain = 620.051
-Synthesis Optimization Complete : Time (s): cpu = 00:03:33 ; elapsed = 00:04:01 . Memory (MB): peak = 1248.785 ; gain = 714.504
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:43 ; elapsed = 00:04:08 . Memory (MB): peak = 1372.867 ; gain = 724.195
+Synthesis Optimization Complete : Time (s): cpu = 00:04:07 ; elapsed = 00:04:15 . Memory (MB): peak = 1372.867 ; gain = 827.863
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.441 . Memory (MB): peak = 1248.785 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3215 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.350 . Memory (MB): peak = 1372.867 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3211 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'toplevel' is not ideal for floorplanning, since the cellview 'Datamemory' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1248.785 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1372.867 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-56 Infos, 8 Warnings, 3 Critical Warnings and 0 Errors encountered.
+58 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:44 ; elapsed = 00:04:14 . Memory (MB): peak = 1248.785 ; gain = 950.020
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1248.785 ; gain = 0.000
+synth_design: Time (s): cpu = 00:04:17 ; elapsed = 00:04:25 . Memory (MB): peak = 1372.867 ; gain = 1073.797
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1372.867 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/toplevel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file toplevel_utilization_synth.rpt -pb toplevel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 10 16:52:49 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 10 17:25:02 2021...

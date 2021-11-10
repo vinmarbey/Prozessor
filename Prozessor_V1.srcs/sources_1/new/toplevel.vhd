@@ -40,15 +40,15 @@ entity toplevel is
 
     -- global ports
     reset : in STD_LOGIC;
---    clk_board   : in STD_LOGIC;
-    clk   : in STD_LOGIC;
+    clk_board   : in STD_LOGIC;
+--    clk   : in STD_LOGIC;
 
     -- ports to "decoder_1"
     --w_e_SREG : out std_logic_vector(7 downto 0);
 
     -- ports to "ALU_1"
     --Status : out STD_LOGIC_VECTOR (7 downto 0);
-    Result : out STD_LOGIC_VECTOR (7 downto 0);
+    --Result : out STD_LOGIC_VECTOR (7 downto 0);
     
     -- GPIO
     sw      : in std_logic_vector(15 downto 0);
@@ -82,7 +82,7 @@ signal     PINB    :  std_logic_vector(7 downto 0);
     signal SEG_Kathode :  std_logic_vector(7 downto 0);
   
   -- output of "clk_wiz_0"
---  signal clk : std_logic;
+  signal clk : std_logic;
   
   -- outputs of "Program_Counter_1"
   signal Addr : STD_LOGIC_VECTOR (8 downto 0);
@@ -250,10 +250,10 @@ begin
   -----------------------------------------------------------------------------
   
   -- instance "clk_wiz_0"
---  clk_wiz_0_1: clk_wiz_0
---    port map (
---      clk_out1 => clk,
---      clk_in1  => clk_board); 
+  clk_wiz_0_1: clk_wiz_0
+    port map (
+      clk_out1 => clk,
+      clk_in1  => clk_board); 
   
   -- instance "Program_Counter_1"
   Program_Counter_1: Program_Counter
@@ -370,7 +370,7 @@ begin
             data_immediate;
   
   -- OUTPUT for Synthesis
-  Result <= Result_ALU_DM;
+  --Result <= Result_ALU_DM;
   
   -- INPUTS and OUTPUTS
   PIND    <= btnR & btnU & btnD & btnL & btnC;
