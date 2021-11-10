@@ -34,7 +34,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity seven_segment is
     Port ( clk : in std_logic;
 --           SEG_enable: in std_logic;
-           SER : in STD_LOGIC_VECTOR (7 downto 0);
+           SER : in STD_LOGIC_VECTOR (3 downto 0);
            SEG0_N : in STD_LOGIC_VECTOR (7 downto 0);
            SEG1_N : in STD_LOGIC_VECTOR (7 downto 0);
            SEG2_N : in STD_LOGIC_VECTOR (7 downto 0);
@@ -69,16 +69,16 @@ begin
       --insert statements to decode internal output signals
       --below is simple example
       if state = st4_AN3 then
-         SEG_Anode_tem <= "1000" and ser(3 downto 0);
+         SEG_Anode_tem <= "1000" and ser;
          SEG_Kathode_tem <= not SEG3_N;
       elsif state = st3_AN2 then
-         SEG_Anode_tem <= "0100" and ser(3 downto 0);
+         SEG_Anode_tem <= "0100" and ser;
          SEG_Kathode_tem <= not SEG2_N;
       elsif state = st2_AN1 then
-         SEG_Anode_tem <= "0010" and ser(3 downto 0);
+         SEG_Anode_tem <= "0010" and ser;
          SEG_Kathode_tem <= not SEG1_N;
       else --state = st1_AN0
-         SEG_Anode_tem <= "0001" and ser(3 downto 0);
+         SEG_Anode_tem <= "0001" and ser;
          SEG_Kathode_tem <= not SEG0_N;
       end if;
    end process;

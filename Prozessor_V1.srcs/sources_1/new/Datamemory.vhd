@@ -41,12 +41,12 @@ entity Datamemory is
            pop_Stack :in std_logic;
            push_Stack :in std_logic;
            DM_Data_out  : out STD_LOGIC_VECTOR (7 downto 0);
-           PIND         : in std_logic_vector (7 downto 0);
+           PIND         : in std_logic_vector (4 downto 0);
            PINC         : in std_logic_vector (7 downto 0);
            PINB         : in std_logic_vector (7 downto 0);
            PORTC        : out std_logic_vector(7 downto 0);
            PORTB        : out std_logic_vector(7 downto 0);
-           SER          : out std_logic_vector(7 downto 0);
+           SER          : out std_logic_vector(3 downto 0);
            SEG0_N       : out std_logic_vector(7 downto 0);
            SEG1_N       : out std_logic_vector(7 downto 0);
            SEG2_N       : out std_logic_vector(7 downto 0);
@@ -61,7 +61,7 @@ end Datamemory;
 architecture Behavioral of Datamemory is
     type ram_type is array (1023 downto 0) of std_logic_vector (7 downto 0);
     signal RAM              : ram_type;
-    signal pind_temp        : std_logic_vector(7 downto 0);
+    signal pind_temp        : std_logic_vector(4 downto 0);
     signal pinc_temp        : std_logic_vector(7 downto 0);
     signal pinb_temp        : std_logic_vector(7 downto 0);
     signal stackpointer_tp     : std_logic_vector(9 downto 0);
@@ -69,7 +69,7 @@ architecture Behavioral of Datamemory is
     --signal i2c_darr_temp    : std_logic_vector(7 downto 0);
     
 begin
-    process (clk, RAM, push_Stack,reset)
+    process (clk, RAM, push_Stack, reset, stackpointer_tp)
     variable stackpointer : std_logic_vector(9 downto 0);
     begin
       stackpointer := stackpointer_tp;
@@ -102,7 +102,7 @@ begin
         end if;
     end process;
     
-    process (RAM, pop_Stack, stackpointer_tp)
+    process (DM_Addr, RAM, pop_Stack, stackpointer_tp, pind_temp, pinc_temp, pinb_temp)
     variable stackpointer : std_logic_vector(9 downto 0);
     begin
         stackpointer := stackpointer_tp;
@@ -110,6 +110,12 @@ begin
         if (pop_Stack = '1') then
             stackpointer := std_logic_vector(unsigned(stackpointer) + 1);
             DM_Data_out <= RAM(to_integer(unsigned(stackpointer)));
+        elsif DM_Addr = "0000110000" then
+            DM_Data_out <= '0' & '0' & '0' & pind_temp;
+        elsif DM_Addr = "0000110011" then
+            DM_Data_out <= pinc_temp;
+        elsif DM_Addr = "0000110110" then
+            DM_Data_out <= pinb_temp;
         else
             DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
         end if;
@@ -151,7 +157,7 @@ begin
     -- Memory-Mapped Output
     PORTC <= RAM(53); -- 0x36
     PORTB <= RAM(56); -- 0x38
-    SER <= RAM(64); -- 0x40
+    SER <= RAM(64)(3 downto 0); -- 0x40
     SEG0_N <= RAM(65); -- 0x41
     SEG1_N <= RAM(66); -- 0x42
     SEG2_N <= RAM(67); -- 0x43
