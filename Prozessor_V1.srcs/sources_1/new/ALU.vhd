@@ -90,7 +90,7 @@ begin
         erg <= OPA and OPB;
       -- COM
       when op_com =>
-        --erg <= std_logic_vector(signed("11111111") - signed(OPA));
+        erg <= not OPA;
       -- ASR
       when op_asr =>
         erg <= std_logic_vector(unsigned(OPA) - unsigned(OPB));

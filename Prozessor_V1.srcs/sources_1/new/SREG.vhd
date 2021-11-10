@@ -46,7 +46,7 @@ begin
   begin
     if clk'event and clk = '1' then  -- rising clock edge
       if w_e_SREG /= "00000000" then
-        SREG_Speicher <= w_e_SREG AND Status;
+        SREG_Speicher <= w_e_SREG AND Status;   -- hier beschreibe ich alle Bit und lasse die oberen 2 oder 3 Bits nicht unverändert. das noch implementieren
       end if;
     end if;
   end process;

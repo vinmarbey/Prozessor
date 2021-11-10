@@ -40,7 +40,7 @@ entity toplevel is
 
     -- global ports
     reset : in STD_LOGIC;
-    clk   : in STD_LOGIC;
+    clk_board   : in STD_LOGIC;
 
     -- ports to "decoder_1"
     --w_e_SREG : out std_logic_vector(7 downto 0);
@@ -50,17 +50,16 @@ entity toplevel is
     Result : out STD_LOGIC_VECTOR (7 downto 0);
     
     -- GPIO
-    PIND    : in std_logic_vector(7 downto 0);
-    PINC    : in std_logic_vector(7 downto 0);
-    PINB    : in std_logic_vector(7 downto 0);
-    PORTC   : out std_logic_vector(7 downto 0);
-    PORTB   : out std_logic_vector(7 downto 0);
-    SER     : out std_logic_vector(7 downto 0);
-    SEG0_N  : out std_logic_vector(7 downto 0);
-    SEG1_N  : out std_logic_vector(7 downto 0);
-    SEG2_N  : out std_logic_vector(7 downto 0);
-    SEG3_N  : out std_logic_vector(7 downto 0)
-    );
+    sw      : in std_logic_vector(15 downto 0);
+    led     : out std_logic_vector(15 downto 0);
+    seg     : out std_logic_vector(6 downto 0);
+    dp      : out std_logic;
+    an      : out std_logic_vector (3 downto 0);
+    btnC     : in std_logic;
+    btnU     : in std_logic;
+    btnL     : in std_logic;
+    btnR     : in std_logic;
+    btnD     : in std_logic);
     
     
     
@@ -71,7 +70,19 @@ architecture Behavioral of toplevel is
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
-
+  
+  -- 
+  signal PIND    :  std_logic_vector(7 downto 0); -- ersetzten mit der Zusammenschaltung der realen Buttons
+    signal PINC    :  std_logic_vector(7 downto 0);
+signal     PINB    :  std_logic_vector(7 downto 0);
+    signal PORTC   :  std_logic_vector(7 downto 0);
+    signal PORTB   :  std_logic_vector(7 downto 0);
+    signal SEG_Anode :  std_logic_vector(3 downto 0);
+    signal SEG_Kathode :  std_logic_vector(7 downto 0);
+  
+  -- output of "clk_wiz_0"
+  signal clk : std_logic;
+  
   -- outputs of "Program_Counter_1"
   signal Addr : STD_LOGIC_VECTOR (8 downto 0);
 
@@ -89,7 +100,10 @@ architecture Behavioral of toplevel is
    signal data_immediate : std_logic_vector (7 downto 0);
    signal  sel_immediate : std_logic;
    signal add_PC        : std_logic_vector (8 downto 0);
+   signal pause_PC      : std_logic;
    signal sel_immediate_to_ALU : std_logic;
+   signal inc_e_Stackpointer : std_logic;
+   signal dec_e_Stackpointer : std_logic;
 
   -- outputs of Regfile
   signal data_opa : std_logic_vector (7 downto 0);
@@ -105,6 +119,11 @@ architecture Behavioral of toplevel is
   
   -- output of Datamemory
   signal DM_Data_out : std_logic_vector(7 downto 0); 
+  signal SER     : std_logic_vector(7 downto 0);
+  signal SEG0_N  : std_logic_vector(7 downto 0);
+  signal SEG1_N  : std_logic_vector(7 downto 0);
+  signal SEG2_N  : std_logic_vector(7 downto 0);
+  signal SEG3_N  : std_logic_vector(7 downto 0);
 
   -- auxiliary signals
   signal PM_data : std_logic_vector(7 downto 0);  -- used for wiring immediate data
@@ -115,6 +134,12 @@ architecture Behavioral of toplevel is
   -- Component declarations
   -----------------------------------------------------------------------------
 
+  component clk_wiz_0
+    port(
+      clk_out1 : out STD_LOGIC;
+      clk_in1 : in STD_LOGIC);
+  end component;
+  
   component Program_Counter
     port (
       reset : in  STD_LOGIC;
@@ -133,6 +158,7 @@ architecture Behavioral of toplevel is
   component decoder
     port (
       Instr         : in  std_logic_vector(15 downto 0);
+      --PM_ADDR       : in std_logic_vector(8 downto 0);
       SREG_OUT      : in std_logic_vector(7 downto 0);
       addr_opa      : out std_logic_vector(4 downto 0);
       addr_opb      : out std_logic_vector(4 downto 0);
@@ -144,7 +170,10 @@ architecture Behavioral of toplevel is
       data_immediate: out std_logic_vector(7 downto 0);
       sel_immediate : out std_logic;
       sel_immediate_to_ALU :out std_logic;
-      add_PC        : out std_logic_vector (8 downto 0)
+      inc_e_Stackpointer :out std_logic;
+      dec_e_Stackpointer :out std_logic;
+      add_PC        : out std_logic_vector (8 downto 0);
+      pause_PC      : out std_logic
       );
   end component;
   
@@ -183,20 +212,34 @@ architecture Behavioral of toplevel is
   component Datamemory
     Port ( 
       clk : in STD_LOGIC;
+      reset: in std_logic;
       DM_Data_in : in STD_LOGIC_VECTOR (7 downto 0);
       DM_Addr : in STD_LOGIC_VECTOR (9 downto 0);
       w_e_data : in STD_LOGIC;
+      inc_e_Stackpointer: in std_logic;
+      dec_e_Stackpointer: in std_logic;
       DM_Data_out : out STD_LOGIC_VECTOR (7 downto 0);
       PIND         : in std_logic_vector (7 downto 0);
-           PINC         : in std_logic_vector (7 downto 0);
-           PINB         : in std_logic_vector (7 downto 0);
-           PORTC        : out std_logic_vector(7 downto 0);
-           PORTB        : out std_logic_vector(7 downto 0);
-           SER        : out std_logic_vector(7 downto 0);
-           SEG0_N        : out std_logic_vector(7 downto 0);
-           SEG1_N        : out std_logic_vector(7 downto 0);
-           SEG2_N        : out std_logic_vector(7 downto 0);
-           SEG3_N        : out std_logic_vector(7 downto 0));
+      PINC         : in std_logic_vector (7 downto 0);
+      PINB         : in std_logic_vector (7 downto 0);
+      PORTC        : out std_logic_vector(7 downto 0);
+      PORTB        : out std_logic_vector(7 downto 0);
+      SER        : out std_logic_vector(7 downto 0);
+      SEG0_N        : out std_logic_vector(7 downto 0);
+      SEG1_N        : out std_logic_vector(7 downto 0);
+      SEG2_N        : out std_logic_vector(7 downto 0);
+      SEG3_N        : out std_logic_vector(7 downto 0));
+  end component;
+  
+  component seven_segment
+    Port ( clk: in std_logic;
+           SER : in STD_LOGIC_VECTOR (7 downto 0);
+           SEG0_N : in STD_LOGIC_VECTOR (7 downto 0);
+           SEG1_N : in STD_LOGIC_VECTOR (7 downto 0);
+           SEG2_N : in STD_LOGIC_VECTOR (7 downto 0);
+           SEG3_N : in STD_LOGIC_VECTOR (7 downto 0);
+           SEG_Anode : out STD_LOGIC_VECTOR (3 downto 0);
+           SEG_Kathode : out STD_LOGIC_VECTOR (7 downto 0));
   end component;
 
 begin
@@ -204,7 +247,13 @@ begin
   -----------------------------------------------------------------------------
   -- Component instantiations
   -----------------------------------------------------------------------------
-
+  
+  -- instance "clk_wiz_0"
+  clk_wiz_0_1: clk_wiz_0
+    port map (
+      clk_out1 => clk,
+      clk_in1  => clk_board); 
+  
   -- instance "Program_Counter_1"
   Program_Counter_1: Program_Counter
     port map (
@@ -223,6 +272,7 @@ begin
   decoder_1: decoder
     port map (
       Instr         => Instr,
+      --PM_ADDR       => Addr,
       SREG_OUT      => SREG_OUT,
       addr_opa      => addr_opa,
       addr_opb      => addr_opb,
@@ -233,7 +283,10 @@ begin
       sel_immediate => sel_immediate,
       sel_immediate_to_ALU => sel_immediate_to_ALU,
       add_PC        => add_PC,
+      pause_PC      => pause_PC,
       w_e_Data      => w_e_Data,
+      inc_e_Stackpointer => inc_e_Stackpointer,
+      dec_e_Stackpointer => dec_e_Stackpointer,
       sel_Data      => sel_Data);
   
 
@@ -273,35 +326,60 @@ begin
   Datamemory_1: Datamemory
     port map (
       clk           => clk,
+      reset         => reset,
       DM_Data_in    => data_opb,
       DM_Addr       => Z_Addr,
       w_e_Data      => w_e_Data,
+      inc_e_Stackpointer=>inc_e_Stackpointer,
+      dec_e_Stackpointer=>dec_e_Stackpointer,
       DM_Data_out   => DM_Data_out,
       PIND =>PIND,
-    PINC =>PINC,
-    PINB =>PINB,
-    PORTC =>PORTC,
-    PORTB =>PORTB,
-    SER =>SER,
-    SEG0_N  =>SEG0_N,
-    SEG1_N =>SEG1_N,
-    SEG2_N =>SEG2_N,
-    SEG3_N =>SEG3_N);
-
-  --PM_Data <=  Instr(11 downto 8)&Instr(3 downto 0);
+      PINC =>PINC,
+      PINB =>PINB,
+      PORTC =>PORTC,
+      PORTB =>PORTB,
+      SER =>SER,
+      SEG0_N  =>SEG0_N,
+      SEG1_N =>SEG1_N,
+      SEG2_N =>SEG2_N,
+      SEG3_N =>SEG3_N);
+    
+   Seven_segment_1: seven_segment
+     port map ( 
+       clk=>clk,
+       SER =>SER,
+       SEG0_N  =>SEG0_N,
+       SEG1_N =>SEG1_N,
+       SEG2_N =>SEG2_N,
+       SEG3_N =>SEG3_N,
+       SEG_Anode=>SEG_Anode,
+       SEG_Kathode=>SEG_Kathode);
   
-  -- MUX for either using data_immediate or data_res
-  PM_Data <= Result_ALU_DM                                 when sel_immediate = '0' else
+  -- MUX for either using data_immediate or data_res as input for Regfile
+  PM_Data <= Result_ALU_DM when sel_immediate = '0' else
               data_immediate;
               --Instr(11 downto 8)&Instr(3 downto 0)    ;
   
+  -- MUX for either using ouput ALU or output Datamemory 
   Result_ALU_DM <=  data_res when sel_data = '0' else
                     DM_Data_out;
-                    
+  
+  -- MUX for either using data from Regfile oder Immediate Data as Input B for ALU  
   Data_B <= data_opb when sel_immediate_to_ALU = '0' else
             data_immediate;
   
+  -- OUTPUT for Synthesis
   Result <= Result_ALU_DM;
+  
+  -- INPUTS and OUTPUTS
+  PIND    <= '0' & '0' & '0' & btnR & btnU & btnD & btnL & btnC;
+  PINC    <= sw(15 downto 8);
+  PINB    <= sw(7 downto 0);
+  led(15 downto 8) <= PORTC;
+  led(7 downto 0) <= PORTB;
+  an <= SEG_Anode;
+  seg <= SEG_Kathode(6 downto 0);
+  dp <= SEG_Kathode(7);
   
 
 end Behavioral;

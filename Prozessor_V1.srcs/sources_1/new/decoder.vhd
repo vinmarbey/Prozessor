@@ -29,20 +29,24 @@ use work.pkg_processor.all;
 
 entity decoder is
   port (
-    Instr       : in  std_logic_vector(15 downto 0);  -- Eingang vom Programmspeicher
-    SREG_OUT    : in std_logic_vector(7 downto 0);
-    addr_opa    : out std_logic_vector(4 downto 0);   -- Adresse von 1. Operand
-    addr_opb    : out std_logic_vector(4 downto 0);   -- Adresse von 2. Operand
-    OPCODE      : out std_logic_vector(4 downto 0);   -- Opcode fÃ¼r ALU
-    w_e_regfile : out std_logic;         -- write enable for Registerfile
-    w_e_SREG    : out std_logic_vector(7 downto 0); -- einzeln Write_enables fÃ¼r SREG - Bits
-    w_e_Data    : out std_logic;
-    sel_Data    : out std_logic;
-    data_immediate: out std_logic_vector(7 downto 0);
-    sel_immediate: out std_logic;
-    sel_immediate_to_ALU :out std_logic;
-    add_PC      : out std_logic_vector (8 downto 0)
-    -- hier kommen noch die ganzen Steuersignale der Multiplexer...
+    Instr       : in  std_logic_vector(15 downto 0);    -- Input from Programmemory
+    --PM_ADDR     : in std_logic_vector(8 downto 0);      -- Input from Programcounter
+    SREG_OUT    : in std_logic_vector(7 downto 0);      -- Input from SREG
+    addr_opa    : out std_logic_vector(4 downto 0);     -- Address for 1st Operand
+    addr_opb    : out std_logic_vector(4 downto 0);     -- Address for 2nd Operand
+    OPCODE      : out std_logic_vector(4 downto 0);     -- Opcode for ALU
+    w_e_regfile : out std_logic;                        -- write enable for Registerfile
+    w_e_SREG    : out std_logic_vector(7 downto 0);     --  Write_enables bitewise SREG
+    w_e_Data    : out std_logic;                        -- write enable Datamemory
+    sel_Data    : out std_logic;                        -- select signal for either using ALU output ('0') or Datamemory output ('1')
+    data_immediate: out std_logic_vector(7 downto 0);   -- immediate data write to Registerfile
+    sel_immediate: out std_logic;                       -- select signal for either using ALU output ('0') or immediate data ('0')
+    sel_immediate_to_ALU :out std_logic;                -- immediate data write to ALU - OPB
+    inc_e_Stackpointer :out std_logic;                  -- increment enable for stackpointer
+    dec_e_Stackpointer :out std_logic;                  -- decrement enable for stackpointer
+    add_PC      : out std_logic_vector (8 downto 0);    -- add figure to Programcounter; for RJMP and RCALL
+    pause_PC    : out std_logic                         -- pause increment Programcounter; for RCALL and RET
+    
  
     );
 end decoder;
@@ -60,9 +64,10 @@ begin  -- Behavioral
   begin  -- process dec_mux
 
 
-    -- ACHTUNG!!!
-    -- So einfach wie hier unten ist das Ganze nicht! Es soll nur den Anfang erleichtern!
-    -- Etwas muss man hier schon nachdenken und sich die Operationen genau ansehen...
+    -- Iterationszähler für RCALL und RET
+    -- INSTR auf temp signal legen, um zweite Interation machen zu können
+    -- instr ein zweites mal mit dem Wert beschreibn und durch if auf den Zähler den zweiten Teil ausführen
+    -- evtl zuerst abprüfen ob RCALL oder RET, um den hier implementierten PUSH und POP zu nutzen
     
     -- Vorzuweisung der Signale, um Latches zu verhindern
     addr_opa <= "00000";
@@ -76,6 +81,9 @@ begin  -- Behavioral
     sel_immediate <= '0';
     sel_immediate_to_ALU <= '0';
     add_PC <= "000000000";
+    inc_e_Stackpointer <= '0';
+    dec_e_Stackpointer <= '0';
+    pause_PC <= '0';
     
     
  
@@ -189,16 +197,20 @@ begin  -- Behavioral
             w_e_regfile <= '1';
             w_e_SREG <= "00000000";
             sel_immediate <= '1';
-          -- rjmp
+          -- RJMP
           when "1100" =>
             add_pc <= Instr(8 downto 0);
+          -- RCALL
+          when "1101" =>
+            -- pause_PC <= '1';
+            
           when others => 
             case Instr(15 downto 9) & Instr (3 downto 0) is
               -- LD
               when "10000000000" =>
                 addr_opa <= Instr(8 downto 4);
                 w_e_regfile <= '1';
-                sel_data <= '1';
+                sel_data <= '0';
               -- ST
               when "10000010000" =>
                 addr_opb <= Instr(8 downto 4);
@@ -235,6 +247,16 @@ begin  -- Behavioral
                 OPCODE <= op_lsr;
                 w_e_regfile <= '1';
                 w_e_SREG <= "00011111";
+              -- PUSH
+              when "10010011111" =>
+                addr_opb <= Instr(8 downto 4);
+                dec_e_Stackpointer <= '1';
+              -- POP
+              when "10010001111" =>
+                addr_opa <= Instr(8 downto 4);
+                inc_e_Stackpointer <= '1';
+                w_e_regfile <= '1';
+                sel_Data <= '1';
               when others =>
                 case Instr(15 downto 0) is
                   -- SEC
@@ -245,6 +267,10 @@ begin  -- Behavioral
                   when "1001010010001000" =>
                     OPCODE <= op_clc;
                     w_e_SREG <= "00000001";
+                  -- RET
+                  when "1001010100001000" =>
+                    -- pause_PC <= '1';
+                    -- new_value_PC <= "xxxxxxxxx";
                   when others => null;
                 end case;
             end case;

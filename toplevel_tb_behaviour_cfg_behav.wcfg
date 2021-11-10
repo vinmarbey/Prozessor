@@ -5,6 +5,7 @@
    <db_ref_list>
       <db_ref path="toplevel_tb_behaviour_cfg_behav.wdb" id="1">
          <top_modules>
+            <top_module name="glbl" />
             <top_module name="pkg_instrmem" />
             <top_module name="pkg_processor" />
             <top_module name="toplevel_tb" />
@@ -12,18 +13,30 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="150960fs"></ZoomStartTime>
-      <ZoomEndTime time="417113fs"></ZoomEndTime>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="534808fs"></ZoomEndTime>
       <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="125"></ValueColumnWidth>
+      <NameColumnWidth column_width="204"></NameColumnWidth>
+      <ValueColumnWidth column_width="115"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/toplevel_tb/clk_board" type="logic">
+      <obj_property name="ElementShortName">clk_board</obj_property>
+      <obj_property name="ObjectShortName">clk_board</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Program_Counter_1/Addr" type="array">
+      <obj_property name="ElementShortName">Addr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">Addr[8:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/toplevel_tb/DUT/ALU_1/OPCODE" type="array">
-      <obj_property name="ElementShortName">OPCODE[3:0]</obj_property>
-      <obj_property name="ObjectShortName">OPCODE[3:0]</obj_property>
+      <obj_property name="ElementShortName">OPCODE[4:0]</obj_property>
+      <obj_property name="ObjectShortName">OPCODE[4:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/toplevel_tb/DUT/ALU_1/OPA" type="array">
       <obj_property name="ElementShortName">OPA[7:0]</obj_property>
@@ -50,7 +63,44 @@
       <obj_property name="ObjectShortName">Status[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/toplevel_tb/DUT/Datamemory_1/RAM" type="array">
-      <obj_property name="ElementShortName">RAM[63:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">RAM[63:0][7:0]</obj_property>
+      <obj_property name="ElementShortName">RAM[1023:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[1023:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Datamemory_1/inc_e_Stackpointer" type="logic">
+      <obj_property name="ElementShortName">inc_e_Stackpointer</obj_property>
+      <obj_property name="ObjectShortName">inc_e_Stackpointer</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Datamemory_1/dec_e_Stackpointer" type="logic">
+      <obj_property name="ElementShortName">dec_e_Stackpointer</obj_property>
+      <obj_property name="ObjectShortName">dec_e_Stackpointer</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/sel_Data" type="logic">
+      <obj_property name="ElementShortName">sel_Data</obj_property>
+      <obj_property name="ObjectShortName">sel_Data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Datamemory_1/DM_Addr" type="array">
+      <obj_property name="ElementShortName">DM_Addr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">DM_Addr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Datamemory_1/DM_Data_out" type="array">
+      <obj_property name="ElementShortName">DM_Data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DM_Data_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Result_ALU_DM" type="array">
+      <obj_property name="ElementShortName">Result_ALU_DM[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Result_ALU_DM[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/sel_Data" type="logic">
+      <obj_property name="ElementShortName">sel_Data</obj_property>
+      <obj_property name="ObjectShortName">sel_Data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Reg_File_1/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Reg_File_1/register_speicher" type="array">
+      <obj_property name="ElementShortName">register_speicher[31:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">register_speicher[31:0][7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

@@ -31,14 +31,10 @@ entity Reg_File is
            w_e_regfile : in STD_LOGIC;
            data_opa : out STD_LOGIC_VECTOR (7 downto 0);
            data_opb : out STD_LOGIC_VECTOR (7 downto 0);
-           Z_Addr   : out std_logic_vector (9 downto 0);
+           Z_Addr   : out std_logic_vector (9 downto 0);    -- R31 (1 downto 0) & R30
            data_in : in STD_LOGIC_VECTOR (7 downto 0)
            );
 end Reg_File;
-
--- ACHTUNG!!! So einfach wird das mit dem Registerfile am Ende nicht.
--- hier muss noch einiges bzgl. Load/Store gemacht werden...
-
 
 architecture Behavioral of Reg_File is
   type regs is array(31 downto 0) of std_logic_vector(7 downto 0); 
