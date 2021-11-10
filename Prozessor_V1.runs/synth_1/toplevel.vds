@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Nov 10 13:13:45 2021
-# Process ID: 264
+# Start of session at: Wed Nov 10 13:56:23 2021
+# Process ID: 408
 # Current directory: C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1
 # Command line: vivado.exe -log toplevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source toplevel.tcl
 # Log file: C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/toplevel.vds
@@ -16,41 +16,42 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11140 
+INFO: Helper process launched with PID 7740 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 779.617 ; gain = 233.680
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 769.191 ; gain = 235.762
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'toplevel' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:69]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/.Xil/Vivado-264-DESKTOP-F4RPBPN/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz_0_1' of component 'clk_wiz_0' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:252]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/.Xil/Vivado-264-DESKTOP-F4RPBPN/realtime/clk_wiz_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'Program_Counter' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:31' bound to instance 'Program_Counter_1' of component 'Program_Counter' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:258]
+INFO: [Synth 8-638] synthesizing module 'toplevel' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:70]
+INFO: [Synth 8-3491] module 'Program_Counter' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:31' bound to instance 'Program_Counter_1' of component 'Program_Counter' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:259]
 INFO: [Synth 8-638] synthesizing module 'Program_Counter' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'Program_Counter' (1#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:41]
-INFO: [Synth 8-3491] module 'prog_mem' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd:37' bound to instance 'prog_mem_1' of component 'prog_mem' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:266]
+INFO: [Synth 8-3491] module 'prog_mem' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd:37' bound to instance 'prog_mem_1' of component 'prog_mem' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:267]
 INFO: [Synth 8-638] synthesizing module 'prog_mem' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd:42]
 INFO: [Synth 8-256] done synthesizing module 'prog_mem' (2#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd:42]
-INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd:30' bound to instance 'decoder_1' of component 'decoder' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:272]
+INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd:30' bound to instance 'decoder_1' of component 'decoder' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:273]
 INFO: [Synth 8-638] synthesizing module 'decoder' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd:54]
 INFO: [Synth 8-256] done synthesizing module 'decoder' (3#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd:54]
-INFO: [Synth 8-3491] module 'Reg_File' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd:27' bound to instance 'Reg_File_1' of component 'Reg_File' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:296]
+INFO: [Synth 8-3491] module 'Reg_File' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd:27' bound to instance 'Reg_File_1' of component 'Reg_File' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:297]
 INFO: [Synth 8-638] synthesizing module 'Reg_File' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd:39]
 INFO: [Synth 8-256] done synthesizing module 'Reg_File' (4#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd:39]
-INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:29' bound to instance 'ALU_1' of component 'ALU' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:309]
+INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:29' bound to instance 'ALU_1' of component 'ALU' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:310]
 INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:37]
 INFO: [Synth 8-256] done synthesizing module 'ALU' (5#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:37]
-INFO: [Synth 8-3491] module 'SREG' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:34' bound to instance 'SREG_1' of component 'SREG' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:318]
+INFO: [Synth 8-3491] module 'SREG' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:34' bound to instance 'SREG_1' of component 'SREG' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:319]
 INFO: [Synth 8-638] synthesizing module 'SREG' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'SREG' (6#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:41]
-INFO: [Synth 8-3491] module 'Datamemory' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:35' bound to instance 'Datamemory_1' of component 'Datamemory' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:326]
+INFO: [Synth 8-3491] module 'Datamemory' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:35' bound to instance 'Datamemory_1' of component 'Datamemory' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:327]
 INFO: [Synth 8-638] synthesizing module 'Datamemory' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:61]
-WARNING: [Synth 8-6014] Unused sequential element stack_counter_write_reg was removed.  [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:84]
 INFO: [Synth 8-256] done synthesizing module 'Datamemory' (7#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:61]
-INFO: [Synth 8-3491] module 'seven_segment' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:34' bound to instance 'Seven_segment_1' of component 'seven_segment' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:347]
+INFO: [Synth 8-3491] module 'seven_segment' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:34' bound to instance 'Seven_segment_1' of component 'seven_segment' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:348]
 INFO: [Synth 8-638] synthesizing module 'seven_segment' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'seven_segment' (8#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:46]
-INFO: [Synth 8-256] done synthesizing module 'toplevel' (9#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'toplevel' (9#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:70]
+WARNING: [Synth 8-3331] design seven_segment has unconnected port SER[7]
+WARNING: [Synth 8-3331] design seven_segment has unconnected port SER[6]
+WARNING: [Synth 8-3331] design seven_segment has unconnected port SER[5]
+WARNING: [Synth 8-3331] design seven_segment has unconnected port SER[4]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 969.949 ; gain = 424.012
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 958.855 ; gain = 425.426
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -63,47 +64,51 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 969.949 ; gain = 424.012
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 958.855 ; gain = 425.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 969.949 ; gain = 424.012
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 958.855 ; gain = 425.426
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.307 . Memory (MB): peak = 969.949 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.279 . Memory (MB): peak = 958.855 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_0_1'
-Finished Parsing XDC File [c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_0_1'
 Parsing XDC File [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk_board'. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_board'. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_board'. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:13]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_board]'. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc:13]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
 Finished Parsing XDC File [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/toplevel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/toplevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1078.641 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1052.531 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 1078.641 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1052.531 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1078.641 ; gain = 532.703
+Finished Constraint Validation : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1052.531 ; gain = 519.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1078.641 ; gain = 532.703
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1052.531 ; gain = 519.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk_board. (constraint file  c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_board. (constraint file  c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
-Applied set_property DONT_TOUCH = true for clk_wiz_0_1. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1078.641 ; gain = 532.703
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1052.531 ; gain = 519.102
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "OPCODE" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "w_e_regfile" won't be mapped to RAM because it is too sparse
@@ -112,7 +117,7 @@ INFO: [Synth 8-5546] ROM "sel_Data" won't be mapped to RAM because it is too spa
 INFO: [Synth 8-5546] ROM "dec_e_Stackpointer" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:53]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'seven_segment'
-WARNING: [Synth 8-327] inferring latch for variable 'stackpointer_reg' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
+WARNING: [Synth 8-327] inferring latch for variable 'stackpointer_reg' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -124,17 +129,17 @@ WARNING: [Synth 8-327] inferring latch for variable 'stackpointer_reg' [C:/Users
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'seven_segment'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 1078.641 ; gain = 532.703
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 1052.531 ; gain = 519.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+----------------+------------+----------+
 |      |RTL Partition   |Replication |Instances |
 +------+----------------+------------+----------+
-|1     |Datamemory__GB0 |           1|     37202|
-|2     |Datamemory__GB1 |           1|     11575|
-|3     |Datamemory__GB2 |           1|     14530|
-|4     |toplevel__GC0   |           1|      2844|
+|1     |Datamemory__GB0 |           1|     37253|
+|2     |Datamemory__GB1 |           1|     11599|
+|3     |Datamemory__GB2 |           1|     14475|
+|4     |toplevel__GC0   |           1|      2839|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -150,14 +155,16 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
 	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 1062  
+	                8 Bit    Registers := 1061  
+	                4 Bit    Registers := 1     
 +---Muxes : 
 	 512 Input     16 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 2     
 	   8 Input      9 Bit        Muxes := 1     
 	   4 Input      9 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 5     
-	   4 Input      8 Bit        Muxes := 3     
+	   4 Input      8 Bit        Muxes := 2     
 	   8 Input      8 Bit        Muxes := 1     
 	  11 Input      8 Bit        Muxes := 1     
 	  12 Input      8 Bit        Muxes := 1     
@@ -172,13 +179,14 @@ Detailed RTL Component Info :
 	   7 Input      5 Bit        Muxes := 1     
 	  11 Input      5 Bit        Muxes := 1     
 	  18 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
 	  10 Input      3 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 3     
 	  11 Input      2 Bit        Muxes := 5     
 	  18 Input      2 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 1025  
 	   2 Input      1 Bit        Muxes := 44    
 	   4 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1025  
 	  17 Input      1 Bit        Muxes := 4     
 	  11 Input      1 Bit        Muxes := 5     
 	   8 Input      1 Bit        Muxes := 2     
@@ -201,12 +209,13 @@ Detailed RTL Component Info :
 +---Registers : 
 	                8 Bit    Registers := 1027  
 +---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 2     
 	   4 Input      8 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 1024  
 	   2 Input      1 Bit        Muxes := 11    
 	   4 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1024  
 Module Program_Counter 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -270,9 +279,11 @@ Detailed RTL Component Info :
 Module seven_segment 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
 +---Muxes : 
-	   4 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
@@ -290,7 +301,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3936] Found unconnected internal register 'Seven_segment_1/SEG_Anode_reg' and it is trimmed from '8' to '4' bits. [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:60]
 INFO: [Synth 8-5546] ROM "decoder_1/OPCODE" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[24][0]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[9][0]'
 INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[10][0]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[9][0]'
@@ -336,42 +346,45 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:13 ; elapsed = 00:02:20 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:18 ; elapsed = 00:02:26 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+----------------+------------+----------+
 |      |RTL Partition   |Replication |Instances |
 +------+----------------+------------+----------+
-|1     |Datamemory__GB0 |           1|     29546|
-|2     |Datamemory__GB1 |           1|      1166|
-|3     |Datamemory__GB2 |           1|      1348|
-|4     |toplevel__GC0   |           1|       679|
+|1     |Datamemory__GB0 |           1|     29665|
+|2     |Datamemory__GB1 |           1|      1198|
+|3     |Datamemory__GB2 |           1|      1478|
+|4     |toplevel__GC0   |           1|       678|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:26 ; elapsed = 00:02:34 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:32 ; elapsed = 00:02:40 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:29 ; elapsed = 00:03:37 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Timing Optimization : Time (s): cpu = 00:02:32 ; elapsed = 00:02:40 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------+------------+----------+
-|      |RTL Partition |Replication |Instances |
-+------+--------------+------------+----------+
-|1     |toplevel_GT0  |           1|     32631|
-+------+--------------+------------+----------+
++------+----------------+------------+----------+
+|      |RTL Partition   |Replication |Instances |
++------+----------------+------------+----------+
+|1     |Datamemory__GB0 |           1|     29665|
+|2     |Datamemory__GB1 |           1|      1198|
+|3     |Datamemory__GB2 |           1|      1478|
+|4     |toplevel__GC0   |           1|       678|
++------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:42 ; elapsed = 00:03:50 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Technology Mapping : Time (s): cpu = 00:02:37 ; elapsed = 00:02:46 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -395,13 +408,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:58 ; elapsed = 00:04:06 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished IO Insertion : Time (s): cpu = 00:02:56 ; elapsed = 00:03:04 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:58 ; elapsed = 00:04:06 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:56 ; elapsed = 00:03:04 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -409,26 +422,26 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[9] with 1st driver pin 'Datamemory_1/stackpointer_reg[9]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[9] with 2nd driver pin 'Datamemory_1/stackpointer_reg[9]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[6] with 1st driver pin 'Datamemory_1/stackpointer_reg[6]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[6] with 2nd driver pin 'Datamemory_1/stackpointer_reg[6]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[4] with 1st driver pin 'Datamemory_1/stackpointer_reg[4]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[4] with 2nd driver pin 'Datamemory_1/stackpointer_reg[4]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[8] with 1st driver pin 'Datamemory_1/stackpointer_reg[8]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[8] with 2nd driver pin 'Datamemory_1/stackpointer_reg[8]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[5] with 1st driver pin 'Datamemory_1/stackpointer_reg[5]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[5] with 2nd driver pin 'Datamemory_1/stackpointer_reg[5]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[7] with 1st driver pin 'Datamemory_1/stackpointer_reg[7]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[7] with 2nd driver pin 'Datamemory_1/stackpointer_reg[7]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[1] with 1st driver pin 'Datamemory_1/stackpointer_reg[1]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[1] with 2nd driver pin 'Datamemory_1/stackpointer_reg[1]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[2] with 1st driver pin 'Datamemory_1/stackpointer_reg[2]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[2] with 2nd driver pin 'Datamemory_1/stackpointer_reg[2]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[3] with 1st driver pin 'Datamemory_1/stackpointer_reg[3]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[3] with 2nd driver pin 'Datamemory_1/stackpointer_reg[3]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[0] with 1st driver pin 'Datamemory_1/stackpointer_reg[0]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:125]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[0] with 2nd driver pin 'Datamemory_1/stackpointer_reg[0]__0/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:86]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[6] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[6]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[6] with 2nd driver pin 'Datamemory_1/stackpointer_reg[6]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[8] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[8]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[8] with 2nd driver pin 'Datamemory_1/stackpointer_reg[8]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[7] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[7]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[7] with 2nd driver pin 'Datamemory_1/stackpointer_reg[7]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[9] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[9]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[9] with 2nd driver pin 'Datamemory_1/stackpointer_reg[9]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[5] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[5]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[5] with 2nd driver pin 'Datamemory_1/stackpointer_reg[5]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[4] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[4]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[4] with 2nd driver pin 'Datamemory_1/stackpointer_reg[4]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[3] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[3]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[3] with 2nd driver pin 'Datamemory_1/stackpointer_reg[3]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[2] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[2]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[2] with 2nd driver pin 'Datamemory_1/stackpointer_reg[2]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[1] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[1]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[1] with 2nd driver pin 'Datamemory_1/stackpointer_reg[1]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[0] with 1st driver pin 'Datamemory_1/stack_counter_temp_reg[0]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:76]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Datamemory_1/stackpointer[0] with 2nd driver pin 'Datamemory_1/stackpointer_reg[0]/Q' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:109]
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
@@ -440,93 +453,92 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:00 ; elapsed = 00:04:09 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:57 ; elapsed = 00:03:05 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:00 ; elapsed = 00:04:09 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:57 ; elapsed = 00:03:05 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:01 ; elapsed = 00:04:10 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:57 ; elapsed = 00:03:06 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:01 ; elapsed = 00:04:10 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:57 ; elapsed = 00:03:06 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |clk_wiz_0     |         1|
-+------+--------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----------------+------+
-|      |Cell             |Count |
-+------+-----------------+------+
-|1     |clk_wiz_0_bbox_0 |     1|
-|2     |CARRY4           |     7|
-|3     |LUT1             |     3|
-|4     |LUT2             |   125|
-|5     |LUT3             |    26|
-|6     |LUT4             |   283|
-|7     |LUT5             |   133|
-|8     |LUT6             |  5855|
-|9     |MUXF7            |  2489|
-|10    |MUXF8            |  1060|
-|11    |FDRE             |  8320|
-|12    |LD               |    11|
-|13    |IBUF             |    22|
-|14    |OBUF             |    36|
-+------+-----------------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     7|
+|3     |LUT1   |     2|
+|4     |LUT2   |   187|
+|5     |LUT3   |    95|
+|6     |LUT4   |   147|
+|7     |LUT5   |    69|
+|8     |LUT6   |  6007|
+|9     |MUXF7  |  2504|
+|10    |MUXF8  |  1056|
+|11    |FDRE   |  8318|
+|12    |LD     |    10|
+|13    |IBUF   |    23|
+|14    |OBUF   |    36|
++------+-------+------+
 
 Report Instance Areas: 
 +------+--------------------+----------------+------+
 |      |Instance            |Module          |Cells |
 +------+--------------------+----------------+------+
-|1     |top                 |                | 18371|
-|2     |  ALU_1             |ALU             |    11|
-|3     |  Datamemory_1      |Datamemory      | 16332|
-|4     |  Program_Counter_1 |Program_Counter |   489|
-|5     |  Reg_File_1        |Reg_File        |  1452|
+|1     |top                 |                | 18462|
+|2     |  ALU_1             |ALU             |     4|
+|3     |  Datamemory_1      |Datamemory      | 16012|
+|4     |  Program_Counter_1 |Program_Counter |   928|
+|5     |  Reg_File_1        |Reg_File        |  1429|
 |6     |  Seven_segment_1   |seven_segment   |    28|
 +------+--------------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:01 ; elapsed = 00:04:10 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:57 ; elapsed = 00:03:06 . Memory (MB): peak = 1168.645 ; gain = 635.215
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 20 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:33 ; elapsed = 00:04:02 . Memory (MB): peak = 1191.109 ; gain = 536.480
-Synthesis Optimization Complete : Time (s): cpu = 00:04:01 ; elapsed = 00:04:10 . Memory (MB): peak = 1191.109 ; gain = 645.172
+Synthesis finished with 0 errors, 20 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:31 ; elapsed = 00:02:59 . Memory (MB): peak = 1168.645 ; gain = 541.539
+Synthesis Optimization Complete : Time (s): cpu = 00:02:58 ; elapsed = 00:03:06 . Memory (MB): peak = 1168.645 ; gain = 635.215
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.388 . Memory (MB): peak = 1191.109 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3567 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.536 . Memory (MB): peak = 1168.645 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3577 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'toplevel' is not ideal for floorplanning, since the cellview 'Datamemory' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1191.109 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1168.645 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 11 instances were transformed.
-  LD => LDCE: 11 instances
+  A total of 10 instances were transformed.
+  LD => LDCE: 10 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-92 Infos, 4 Warnings, 20 Critical Warnings and 0 Errors encountered.
+90 Infos, 9 Warnings, 23 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:14 ; elapsed = 00:04:23 . Memory (MB): peak = 1191.109 ; gain = 892.801
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1191.109 ; gain = 0.000
+synth_design: Time (s): cpu = 00:03:10 ; elapsed = 00:03:18 . Memory (MB): peak = 1168.645 ; gain = 870.145
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1168.645 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/toplevel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file toplevel_utilization_synth.rpt -pb toplevel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 10 13:18:16 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 10 13:59:49 2021...

@@ -40,7 +40,8 @@ entity toplevel is
 
     -- global ports
     reset : in STD_LOGIC;
-    clk_board   : in STD_LOGIC;
+--    clk_board   : in STD_LOGIC;
+    clk   : in STD_LOGIC;
 
     -- ports to "decoder_1"
     --w_e_SREG : out std_logic_vector(7 downto 0);
@@ -81,7 +82,7 @@ signal     PINB    :  std_logic_vector(7 downto 0);
     signal SEG_Kathode :  std_logic_vector(7 downto 0);
   
   -- output of "clk_wiz_0"
-  signal clk : std_logic;
+--  signal clk : std_logic;
   
   -- outputs of "Program_Counter_1"
   signal Addr : STD_LOGIC_VECTOR (8 downto 0);
@@ -102,8 +103,8 @@ signal     PINB    :  std_logic_vector(7 downto 0);
    signal add_PC        : std_logic_vector (8 downto 0);
    signal pause_PC      : std_logic;
    signal sel_immediate_to_ALU : std_logic;
-   signal inc_e_Stackpointer : std_logic;
-   signal dec_e_Stackpointer : std_logic;
+   signal pop_Stack : std_logic;
+   signal push_Stack : std_logic;
 
   -- outputs of Regfile
   signal data_opa : std_logic_vector (7 downto 0);
@@ -119,7 +120,7 @@ signal     PINB    :  std_logic_vector(7 downto 0);
   
   -- output of Datamemory
   signal DM_Data_out : std_logic_vector(7 downto 0); 
-  signal SER     : std_logic_vector(7 downto 0);
+  signal SER     : std_logic_vector(3 downto 0);
   signal SEG0_N  : std_logic_vector(7 downto 0);
   signal SEG1_N  : std_logic_vector(7 downto 0);
   signal SEG2_N  : std_logic_vector(7 downto 0);
@@ -134,11 +135,11 @@ signal     PINB    :  std_logic_vector(7 downto 0);
   -- Component declarations
   -----------------------------------------------------------------------------
 
-  component clk_wiz_0
-    port(
-      clk_out1 : out STD_LOGIC;
-      clk_in1 : in STD_LOGIC);
-  end component;
+--  component clk_wiz_0
+--    port(
+--      clk_out1 : out STD_LOGIC;
+--      clk_in1 : in STD_LOGIC);
+--  end component;
   
   component Program_Counter
     port (
@@ -170,8 +171,8 @@ signal     PINB    :  std_logic_vector(7 downto 0);
       data_immediate: out std_logic_vector(7 downto 0);
       sel_immediate : out std_logic;
       sel_immediate_to_ALU :out std_logic;
-      inc_e_Stackpointer :out std_logic;
-      dec_e_Stackpointer :out std_logic;
+      pop_Stack :out std_logic;
+      push_Stack :out std_logic;
       add_PC        : out std_logic_vector (8 downto 0);
       pause_PC      : out std_logic
       );
@@ -216,15 +217,15 @@ signal     PINB    :  std_logic_vector(7 downto 0);
       DM_Data_in : in STD_LOGIC_VECTOR (7 downto 0);
       DM_Addr : in STD_LOGIC_VECTOR (9 downto 0);
       w_e_data : in STD_LOGIC;
-      inc_e_Stackpointer: in std_logic;
-      dec_e_Stackpointer: in std_logic;
+      pop_Stack: in std_logic;
+      push_Stack: in std_logic;
       DM_Data_out : out STD_LOGIC_VECTOR (7 downto 0);
       PIND         : in std_logic_vector (7 downto 0);
       PINC         : in std_logic_vector (7 downto 0);
       PINB         : in std_logic_vector (7 downto 0);
       PORTC        : out std_logic_vector(7 downto 0);
       PORTB        : out std_logic_vector(7 downto 0);
-      SER        : out std_logic_vector(7 downto 0);
+      SER        : out std_logic_vector(3 downto 0);
       SEG0_N        : out std_logic_vector(7 downto 0);
       SEG1_N        : out std_logic_vector(7 downto 0);
       SEG2_N        : out std_logic_vector(7 downto 0);
@@ -233,7 +234,7 @@ signal     PINB    :  std_logic_vector(7 downto 0);
   
   component seven_segment
     Port ( clk: in std_logic;
-           SER : in STD_LOGIC_VECTOR (7 downto 0);
+           SER : in STD_LOGIC_VECTOR (3 downto 0);
            SEG0_N : in STD_LOGIC_VECTOR (7 downto 0);
            SEG1_N : in STD_LOGIC_VECTOR (7 downto 0);
            SEG2_N : in STD_LOGIC_VECTOR (7 downto 0);
@@ -249,10 +250,10 @@ begin
   -----------------------------------------------------------------------------
   
   -- instance "clk_wiz_0"
-  clk_wiz_0_1: clk_wiz_0
-    port map (
-      clk_out1 => clk,
-      clk_in1  => clk_board); 
+--  clk_wiz_0_1: clk_wiz_0
+--    port map (
+--      clk_out1 => clk,
+--      clk_in1  => clk_board); 
   
   -- instance "Program_Counter_1"
   Program_Counter_1: Program_Counter
@@ -285,8 +286,8 @@ begin
       add_PC        => add_PC,
       pause_PC      => pause_PC,
       w_e_Data      => w_e_Data,
-      inc_e_Stackpointer => inc_e_Stackpointer,
-      dec_e_Stackpointer => dec_e_Stackpointer,
+      pop_Stack => pop_Stack,
+      push_Stack => push_Stack,
       sel_Data      => sel_Data);
   
 
@@ -330,8 +331,8 @@ begin
       DM_Data_in    => data_opb,
       DM_Addr       => Z_Addr,
       w_e_Data      => w_e_Data,
-      inc_e_Stackpointer=>inc_e_Stackpointer,
-      dec_e_Stackpointer=>dec_e_Stackpointer,
+      pop_Stack=>pop_Stack,
+      push_Stack=>push_Stack,
       DM_Data_out   => DM_Data_out,
       PIND =>PIND,
       PINC =>PINC,
