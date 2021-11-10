@@ -59,7 +59,7 @@ architecture behaviour of toplevel_tb is
   signal reset    : STD_LOGIC;
 --  signal clk_board      : STD_LOGIC:='0';
 signal clk      : STD_LOGIC:='0';
-  --signal w_e_SREG : std_logic_vector(7 downto 0);
+  signal w_e_SREG : std_logic_vector(7 downto 0);
   --signal Status   : STD_LOGIC_VECTOR (7 downto 0);
   signal Result   : STD_LOGIC_VECTOR (7 downto 0);
   signal sw      :  std_logic_vector(15 downto 0);

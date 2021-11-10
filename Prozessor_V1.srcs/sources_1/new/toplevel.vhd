@@ -73,7 +73,7 @@ architecture Behavioral of toplevel is
   -----------------------------------------------------------------------------
   
   -- 
-  signal PIND    :  std_logic_vector(7 downto 0); -- ersetzten mit der Zusammenschaltung der realen Buttons
+  signal PIND    :  std_logic_vector(4 downto 0); -- ersetzten mit der Zusammenschaltung der realen Buttons
     signal PINC    :  std_logic_vector(7 downto 0);
 signal     PINB    :  std_logic_vector(7 downto 0);
     signal PORTC   :  std_logic_vector(7 downto 0);
@@ -120,7 +120,7 @@ signal     PINB    :  std_logic_vector(7 downto 0);
   
   -- output of Datamemory
   signal DM_Data_out : std_logic_vector(7 downto 0); 
-  signal SER     : std_logic_vector(7 downto 0);
+  signal SER     : std_logic_vector(3 downto 0);
   signal SEG0_N  : std_logic_vector(7 downto 0);
   signal SEG1_N  : std_logic_vector(7 downto 0);
   signal SEG2_N  : std_logic_vector(7 downto 0);
@@ -220,12 +220,12 @@ signal     PINB    :  std_logic_vector(7 downto 0);
       pop_Stack: in std_logic;
       push_Stack: in std_logic;
       DM_Data_out : out STD_LOGIC_VECTOR (7 downto 0);
-      PIND         : in std_logic_vector (7 downto 0);
+      PIND         : in std_logic_vector (4 downto 0);
       PINC         : in std_logic_vector (7 downto 0);
       PINB         : in std_logic_vector (7 downto 0);
       PORTC        : out std_logic_vector(7 downto 0);
       PORTB        : out std_logic_vector(7 downto 0);
-      SER        : out std_logic_vector(7 downto 0);
+      SER        : out std_logic_vector(3 downto 0);
       SEG0_N        : out std_logic_vector(7 downto 0);
       SEG1_N        : out std_logic_vector(7 downto 0);
       SEG2_N        : out std_logic_vector(7 downto 0);
@@ -234,7 +234,7 @@ signal     PINB    :  std_logic_vector(7 downto 0);
   
   component seven_segment
     Port ( clk: in std_logic;
-           SER : in STD_LOGIC_VECTOR (7 downto 0);
+           SER : in STD_LOGIC_VECTOR (3 downto 0);
            SEG0_N : in STD_LOGIC_VECTOR (7 downto 0);
            SEG1_N : in STD_LOGIC_VECTOR (7 downto 0);
            SEG2_N : in STD_LOGIC_VECTOR (7 downto 0);
@@ -264,10 +264,10 @@ begin
       Addr  => Addr);
 
   -- instance "prog_mem_1"
-  prog_mem_1: prog_mem
-    port map (
-      Addr  => Addr,
-      Instr => Instr);
+--  prog_mem_1: prog_mem
+--    port map (
+--      Addr  => Addr,
+--      Instr => Instr);
   
   -- instance "decoder_1"
   decoder_1: decoder
@@ -373,7 +373,7 @@ begin
   Result <= Result_ALU_DM;
   
   -- INPUTS and OUTPUTS
-  PIND    <= '0' & '0' & '0' & btnR & btnU & btnD & btnL & btnC;
+  PIND    <= btnR & btnU & btnD & btnL & btnC;
   PINC    <= sw(15 downto 8);
   PINB    <= sw(7 downto 0);
   led(15 downto 8) <= PORTC;
