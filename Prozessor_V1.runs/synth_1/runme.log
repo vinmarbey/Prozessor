@@ -15,41 +15,41 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4552 
+INFO: Helper process launched with PID 6688 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 779.602 ; gain = 234.598
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 779.305 ; gain = 233.051
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'toplevel' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:70]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/.Xil/Vivado-12972-DESKTOP-F4RPBPN/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz_0_1' of component 'clk_wiz_0' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:253]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/.Xil/Vivado-12972-DESKTOP-F4RPBPN/realtime/clk_wiz_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'Program_Counter' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:31' bound to instance 'Program_Counter_1' of component 'Program_Counter' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:259]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/.Xil/Vivado-6644-DESKTOP-F4RPBPN/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz_0_1' of component 'clk_wiz_0' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:254]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/.Xil/Vivado-6644-DESKTOP-F4RPBPN/realtime/clk_wiz_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'Program_Counter' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:31' bound to instance 'Program_Counter_1' of component 'Program_Counter' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:260]
 INFO: [Synth 8-638] synthesizing module 'Program_Counter' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'Program_Counter' (1#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd:41]
-INFO: [Synth 8-3491] module 'prog_mem' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd:37' bound to instance 'prog_mem_1' of component 'prog_mem' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:267]
+INFO: [Synth 8-3491] module 'prog_mem' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd:37' bound to instance 'prog_mem_1' of component 'prog_mem' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:268]
 INFO: [Synth 8-638] synthesizing module 'prog_mem' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd:42]
 INFO: [Synth 8-256] done synthesizing module 'prog_mem' (2#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd:42]
-INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd:30' bound to instance 'decoder_1' of component 'decoder' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:273]
+INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd:30' bound to instance 'decoder_1' of component 'decoder' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:274]
 INFO: [Synth 8-638] synthesizing module 'decoder' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd:54]
 INFO: [Synth 8-256] done synthesizing module 'decoder' (3#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd:54]
-INFO: [Synth 8-3491] module 'Reg_File' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd:27' bound to instance 'Reg_File_1' of component 'Reg_File' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:297]
+INFO: [Synth 8-3491] module 'Reg_File' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd:27' bound to instance 'Reg_File_1' of component 'Reg_File' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:298]
 INFO: [Synth 8-638] synthesizing module 'Reg_File' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd:39]
 INFO: [Synth 8-256] done synthesizing module 'Reg_File' (4#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd:39]
-INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:29' bound to instance 'ALU_1' of component 'ALU' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:310]
+INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:29' bound to instance 'ALU_1' of component 'ALU' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:311]
 INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:37]
 INFO: [Synth 8-256] done synthesizing module 'ALU' (5#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/ALU.vhd:37]
-INFO: [Synth 8-3491] module 'SREG' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:34' bound to instance 'SREG_1' of component 'SREG' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:319]
+INFO: [Synth 8-3491] module 'SREG' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:34' bound to instance 'SREG_1' of component 'SREG' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:320]
 INFO: [Synth 8-638] synthesizing module 'SREG' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'SREG' (6#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd:41]
-INFO: [Synth 8-3491] module 'Datamemory' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:35' bound to instance 'Datamemory_1' of component 'Datamemory' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:327]
+INFO: [Synth 8-3491] module 'Datamemory' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:35' bound to instance 'Datamemory_1' of component 'Datamemory' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:328]
 INFO: [Synth 8-638] synthesizing module 'Datamemory' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:61]
 WARNING: [Synth 8-6014] Unused sequential element stackpointer_reg was removed.  [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:75]
 INFO: [Synth 8-256] done synthesizing module 'Datamemory' (7#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd:61]
-INFO: [Synth 8-3491] module 'seven_segment' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:34' bound to instance 'Seven_segment_1' of component 'seven_segment' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:348]
+INFO: [Synth 8-3491] module 'seven_segment' declared at 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:34' bound to instance 'Seven_segment_1' of component 'seven_segment' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:349]
 INFO: [Synth 8-638] synthesizing module 'seven_segment' [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'seven_segment' (8#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/seven_segment.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'toplevel' (9#1) [C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd:70]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 969.578 ; gain = 424.574
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 970.586 ; gain = 424.332
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -62,12 +62,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 969.578 ; gain = 424.574
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 970.586 ; gain = 424.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 969.578 ; gain = 424.574
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 970.586 ; gain = 424.332
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.253 . Memory (MB): peak = 969.578 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.217 . Memory (MB): peak = 970.586 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -80,20 +80,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/toplevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1073.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1075.469 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.108 . Memory (MB): peak = 1073.246 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 1075.469 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1073.246 ; gain = 528.242
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1075.469 ; gain = 529.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1073.246 ; gain = 528.242
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1075.469 ; gain = 529.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -102,7 +102,7 @@ Applied set_property IO_BUFFER_TYPE = NONE for clk_board. (constraint file  c:/U
 Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_board. (constraint file  c:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for clk_wiz_0_1. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1073.246 ; gain = 528.242
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1075.469 ; gain = 529.215
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "OPCODE" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "w_e_regfile" won't be mapped to RAM because it is too sparse
@@ -123,7 +123,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'seven
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'seven_segment'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 1073.246 ; gain = 528.242
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:58 ; elapsed = 00:01:03 . Memory (MB): peak = 1075.469 ; gain = 529.215
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -133,7 +133,7 @@ Report RTL Partitions:
 |1     |Datamemory__GB0 |           1|     37234|
 |2     |Datamemory__GB1 |           1|     11520|
 |3     |Datamemory__GB2 |           1|     14429|
-|4     |toplevel__GC0   |           1|      2853|
+|4     |toplevel__GC0   |           1|      3142|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -297,6 +297,22 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5546] ROM "decoder_1/OPCODE" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[19][0]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[3][0]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[19][1]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[3][1]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[19][2]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[3][2]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[19][3]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[3][3]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[19][4]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[3][4]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[3][5]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[19][5]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[19][6]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[3][6]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[19][7]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/Reg_File_1/register_speicher_reg[3][7]' (FDE) to 'i_0/Reg_File_1/register_speicher_reg[0][7]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][2] )
@@ -306,7 +322,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\Reg_File_1/register_speicher_reg[0][7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:19 ; elapsed = 00:02:26 . Memory (MB): peak = 1259.473 ; gain = 714.469
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:18 ; elapsed = 00:02:29 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -316,32 +332,45 @@ Report RTL Partitions:
 |1     |Datamemory__GB0 |           1|     29777|
 |2     |Datamemory__GB1 |           1|      1278|
 |3     |Datamemory__GB2 |           1|      1390|
-|4     |toplevel__GC0   |           1|       686|
+|4     |toplevel__GC0   |           1|      1175|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:30 ; elapsed = 00:02:36 . Memory (MB): peak = 1259.473 ; gain = 714.469
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:28 ; elapsed = 00:02:38 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[9] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Datamemory_1i_1/i_0/\stackpointer_tp_reg[0] )
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:35 ; elapsed = 00:03:43 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished Timing Optimization : Time (s): cpu = 00:02:36 ; elapsed = 00:02:46 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------+------------+----------+
-|      |RTL Partition |Replication |Instances |
-+------+--------------+------------+----------+
-|1     |toplevel_GT0  |           1|     33132|
-+------+--------------+------------+----------+
++------+----------------+------------+----------+
+|      |RTL Partition   |Replication |Instances |
++------+----------------+------------+----------+
+|1     |Datamemory__GB0 |           1|     18511|
+|2     |Datamemory__GB1 |           1|       510|
+|3     |Datamemory__GB2 |           1|       502|
+|4     |toplevel__GC0   |           1|      1798|
++------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:48 ; elapsed = 00:03:55 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished Technology Mapping : Time (s): cpu = 00:02:44 ; elapsed = 00:02:55 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -365,13 +394,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:04 ; elapsed = 00:04:11 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished IO Insertion : Time (s): cpu = 00:02:54 ; elapsed = 00:03:05 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:04 ; elapsed = 00:04:11 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:54 ; elapsed = 00:03:05 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -390,25 +419,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:06 ; elapsed = 00:04:13 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:55 ; elapsed = 00:03:06 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:06 ; elapsed = 00:04:13 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:56 ; elapsed = 00:03:06 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:07 ; elapsed = 00:04:14 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:56 ; elapsed = 00:03:07 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:07 ; elapsed = 00:04:14 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:56 ; elapsed = 00:03:07 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -427,55 +456,55 @@ Report Cell Usage:
 +------+-----------------+------+
 |1     |clk_wiz_0_bbox_0 |     1|
 |2     |CARRY4           |     7|
-|3     |LUT1             |    26|
-|4     |LUT2             |   169|
-|5     |LUT3             |    54|
-|6     |LUT4             |   200|
-|7     |LUT5             |   258|
-|8     |LUT6             |  6097|
-|9     |MUXF7            |  2176|
-|10    |MUXF8            |  1028|
-|11    |FDRE             |  8318|
-|12    |FDSE             |    76|
-|13    |IBUF             |    22|
-|14    |OBUF             |    28|
+|3     |LUT1             |     1|
+|4     |LUT2             |   170|
+|5     |LUT3             |    29|
+|6     |LUT4             |   104|
+|7     |LUT5             |   237|
+|8     |LUT6             |  3538|
+|9     |MUXF7            |  1088|
+|10    |MUXF8            |   496|
+|11    |FDRE             |  8329|
+|12    |IBUF             |    21|
+|13    |OBUF             |    28|
 +------+-----------------+------+
 
 Report Instance Areas: 
 +------+--------------------+----------------+------+
 |      |Instance            |Module          |Cells |
 +------+--------------------+----------------+------+
-|1     |top                 |                | 18460|
-|2     |  ALU_1             |ALU             |     4|
-|3     |  Datamemory_1      |Datamemory      | 16705|
-|4     |  Program_Counter_1 |Program_Counter |   191|
-|5     |  Reg_File_1        |Reg_File        |  1489|
-|6     |  Seven_segment_1   |seven_segment   |    20|
+|1     |top                 |                | 14049|
+|2     |  ALU_1             |ALU             |     5|
+|3     |  Datamemory_1      |Datamemory      | 11981|
+|4     |  Program_Counter_1 |Program_Counter |   405|
+|5     |  Reg_File_1        |Reg_File        |  1579|
+|6     |  SREG_1            |SREG            |     1|
+|7     |  Seven_segment_1   |seven_segment   |    28|
 +------+--------------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:07 ; elapsed = 00:04:14 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:56 ; elapsed = 00:03:07 . Memory (MB): peak = 1172.117 ; gain = 625.863
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:43 ; elapsed = 00:04:08 . Memory (MB): peak = 1372.867 ; gain = 724.195
-Synthesis Optimization Complete : Time (s): cpu = 00:04:07 ; elapsed = 00:04:15 . Memory (MB): peak = 1372.867 ; gain = 827.863
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:33 ; elapsed = 00:03:01 . Memory (MB): peak = 1172.117 ; gain = 520.980
+Synthesis Optimization Complete : Time (s): cpu = 00:02:56 ; elapsed = 00:03:07 . Memory (MB): peak = 1172.117 ; gain = 625.863
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.350 . Memory (MB): peak = 1372.867 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3211 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.242 . Memory (MB): peak = 1172.117 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1591 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'toplevel' is not ideal for floorplanning, since the cellview 'Datamemory' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1372.867 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1172.117 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-58 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+84 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:17 ; elapsed = 00:04:25 . Memory (MB): peak = 1372.867 ; gain = 1073.797
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1372.867 ; gain = 0.000
+synth_design: Time (s): cpu = 00:03:04 ; elapsed = 00:03:16 . Memory (MB): peak = 1172.117 ; gain = 873.664
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1172.117 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.runs/synth_1/toplevel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file toplevel_utilization_synth.rpt -pb toplevel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 10 17:25:02 2021...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 15 06:30:25 2021...

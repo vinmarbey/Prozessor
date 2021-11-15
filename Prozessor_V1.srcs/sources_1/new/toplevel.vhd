@@ -39,7 +39,7 @@ entity toplevel is
   port (
 
     -- global ports
-    reset : in STD_LOGIC;
+    --reset : in STD_LOGIC;
     clk_board   : in STD_LOGIC;
 --    clk   : in STD_LOGIC;
 
@@ -73,6 +73,7 @@ architecture Behavioral of toplevel is
   -----------------------------------------------------------------------------
   
   -- 
+  signal reset : STD_LOGIC;
   signal PIND    :  std_logic_vector(4 downto 0); -- ersetzten mit der Zusammenschaltung der realen Buttons
     signal PINC    :  std_logic_vector(7 downto 0);
 signal     PINB    :  std_logic_vector(7 downto 0);
@@ -373,6 +374,7 @@ begin
   --Result <= Result_ALU_DM;
   
   -- INPUTS and OUTPUTS
+  reset <= sw(15);
   PIND    <= btnR & btnU & btnD & btnL & btnC;
   PINC    <= sw(15 downto 8);
   PINB    <= sw(7 downto 0);
