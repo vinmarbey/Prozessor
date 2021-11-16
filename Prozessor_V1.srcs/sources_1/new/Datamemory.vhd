@@ -82,6 +82,8 @@ begin
             elsif (w_e_data = '1') and (push_Stack = '1')  then
                 RAM(to_integer(unsigned(stackpointer))) <= DM_Data_in;
                 stackpointer := std_logic_vector(unsigned(stackpointer) - 1);
+            else 
+                stackpointer := stackpointer;
             end if;
             
 --            if (pop_Stack = '1') then
@@ -155,7 +157,7 @@ begin
 --    DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
     
     -- Memory-Mapped Output
-    PORTC <= RAM(53); -- 0x36
+    PORTC <= RAM(53); -- 0x35
     PORTB <= RAM(56); -- 0x38
     SER <= RAM(64)(3 downto 0); -- 0x40
     SEG0_N <= RAM(65); -- 0x41

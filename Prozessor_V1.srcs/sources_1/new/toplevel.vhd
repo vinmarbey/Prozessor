@@ -39,7 +39,7 @@ entity toplevel is
   port (
 
     -- global ports
-    --reset : in STD_LOGIC;
+--    reset : in STD_LOGIC;
     clk_board   : in STD_LOGIC;
 --    clk   : in STD_LOGIC;
 
@@ -250,7 +250,7 @@ begin
   -- Component instantiations
   -----------------------------------------------------------------------------
   
-  -- instance "clk_wiz_0"
+--   instance "clk_wiz_0"
   clk_wiz_0_1: clk_wiz_0
     port map (
       clk_out1 => clk,
@@ -374,7 +374,7 @@ begin
   --Result <= Result_ALU_DM;
   
   -- INPUTS and OUTPUTS
-  reset <= sw(15);
+  reset   <= not sw(15);
   PIND    <= btnR & btnU & btnD & btnL & btnC;
   PINC    <= sw(15 downto 8);
   PINB    <= sw(7 downto 0);

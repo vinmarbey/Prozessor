@@ -39,7 +39,7 @@ architecture behaviour of toplevel_tb is
       clk      : in  STD_LOGIC;
       --w_e_SREG : out std_logic_vector(7 downto 0);
       --Status   : out STD_LOGIC_VECTOR (7 downto 0);
-      Result   : out STD_LOGIC_VECTOR (7 downto 0);
+      --Result   : out STD_LOGIC_VECTOR (7 downto 0);
       -- GPIO
     sw      : in std_logic_vector(15 downto 0);
     led     : out std_logic_vector(15 downto 0);
@@ -61,7 +61,7 @@ architecture behaviour of toplevel_tb is
 signal clk      : STD_LOGIC:='0';
   --signal w_e_SREG : std_logic_vector(7 downto 0);
   --signal Status   : STD_LOGIC_VECTOR (7 downto 0);
-  signal Result   : STD_LOGIC_VECTOR (7 downto 0);
+  --signal Result   : STD_LOGIC_VECTOR (7 downto 0);
   signal sw      :  std_logic_vector(15 downto 0);
   signal   led     :  std_logic_vector(15 downto 0);
    signal  seg     :  std_logic_vector(6 downto 0);
@@ -86,7 +86,7 @@ begin  -- behaviour
 clk      => clk,
       --w_e_SREG => w_e_SREG,
       --Status   => Status,
-      Result   => Result,
+      --Result   => Result,
       sw     => sw,
     led     => led,
     seg    => seg,
@@ -111,7 +111,10 @@ clk      => clk,
     reset <= '1';
     wait for 51ns;
     reset <= '0';
-    --PINC <= "00110011";
+    wait for 20ns;
+    sw <= "1011001100110011";
+    wait for 51ns;
+    sw <= "0000000000000000";
     wait;
 
   end process WaveGen_Proc;

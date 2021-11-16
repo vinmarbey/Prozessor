@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Datamemory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Datamemory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'toplevel'

@@ -69,16 +69,16 @@ begin
       --insert statements to decode internal output signals
       --below is simple example
       if state = st4_AN3 then
-         SEG_Anode_tem <= "1000" and ser;
+         SEG_Anode_tem <= not ("1000" and ser);
          SEG_Kathode_tem <= not SEG3_N;
       elsif state = st3_AN2 then
-         SEG_Anode_tem <= "0100" and ser;
+         SEG_Anode_tem <= not ("0100" and ser);
          SEG_Kathode_tem <= not SEG2_N;
       elsif state = st2_AN1 then
-         SEG_Anode_tem <= "0010" and ser;
+         SEG_Anode_tem <= not ("0010" and ser);
          SEG_Kathode_tem <= not SEG1_N;
       else --state = st1_AN0
-         SEG_Anode_tem <= "0001" and ser;
+         SEG_Anode_tem <= not ("0001" and ser);
          SEG_Kathode_tem <= not SEG0_N;
       end if;
    end process;
