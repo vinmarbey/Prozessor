@@ -39,7 +39,7 @@ entity toplevel is
   port (
 
     -- global ports
---    reset : in STD_LOGIC;
+--    reset1 : in STD_LOGIC;
     clk_board   : in STD_LOGIC;
 --    clk   : in STD_LOGIC;
 
@@ -135,7 +135,6 @@ signal     PINB    :  std_logic_vector(7 downto 0);
   -----------------------------------------------------------------------------
   -- Component declarations
   -----------------------------------------------------------------------------
-
   component clk_wiz_0
     port(
       clk_out1 : out STD_LOGIC;
@@ -374,7 +373,7 @@ begin
   --Result <= Result_ALU_DM;
   
   -- INPUTS and OUTPUTS
-  reset   <= not sw(15);
+  reset   <= btnC;
   PIND    <= btnR & btnU & btnD & btnL & btnC;
   PINC    <= sw(15 downto 8);
   PINB    <= sw(7 downto 0);

@@ -14,7 +14,13 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package xil_defaultlib.pkg_processor
 Compiling package xil_defaultlib.pkg_instrmem
+Compiling package vl.vl_types
 Compiling module xil_defaultlib.glbl
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=15.62...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
 Compiling architecture behavioral of entity xil_defaultlib.Program_Counter [program_counter_default]
 Compiling architecture behavioral of entity xil_defaultlib.prog_mem [prog_mem_default]
 Compiling architecture behavioral of entity xil_defaultlib.decoder [decoder_default]

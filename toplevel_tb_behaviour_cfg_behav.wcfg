@@ -5,6 +5,7 @@
    <db_ref_list>
       <db_ref path="toplevel_tb_behaviour_cfg_behav.wdb" id="1">
          <top_modules>
+            <top_module name="glbl" />
             <top_module name="pkg_instrmem" />
             <top_module name="pkg_processor" />
             <top_module name="toplevel_tb" />
@@ -12,26 +13,38 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1410100fs"></ZoomStartTime>
-      <ZoomEndTime time="2036986fs"></ZoomEndTime>
-      <Cursor1Time time="110000fs"></Cursor1Time>
+      <ZoomStartTime time="3653400fs"></ZoomStartTime>
+      <ZoomEndTime time="4691401fs"></ZoomEndTime>
+      <Cursor1Time time="20000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="204"></NameColumnWidth>
-      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+      <ValueColumnWidth column_width="105"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
-   <wvobject fp_name="/toplevel_tb/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/toplevel_tb/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
+   <WVObjectSize size="28" />
    <wvobject fp_name="/toplevel_tb/DUT/Program_Counter_1/Addr" type="array">
       <obj_property name="ElementShortName">Addr[8:0]</obj_property>
       <obj_property name="ObjectShortName">Addr[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/clk_board" type="logic">
+      <obj_property name="ElementShortName">clk_board</obj_property>
+      <obj_property name="ObjectShortName">clk_board</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/btnC" type="logic">
+      <obj_property name="ElementShortName">btnC</obj_property>
+      <obj_property name="ObjectShortName">btnC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/sw" type="array">
+      <obj_property name="ElementShortName">sw[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sw[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/toplevel_tb/DUT/ALU_1/OPCODE" type="array">
       <obj_property name="ElementShortName">OPCODE[4:0]</obj_property>

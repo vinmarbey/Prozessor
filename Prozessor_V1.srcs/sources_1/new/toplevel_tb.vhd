@@ -34,9 +34,9 @@ architecture behaviour of toplevel_tb is
 
   component toplevel
     port (
-      reset    : in  STD_LOGIC;
---      clk_board      : in  STD_LOGIC;
-      clk      : in  STD_LOGIC;
+--      reset1    : in  STD_LOGIC;
+      clk_board      : in  STD_LOGIC;
+--      clk      : in  STD_LOGIC;
       --w_e_SREG : out std_logic_vector(7 downto 0);
       --Status   : out STD_LOGIC_VECTOR (7 downto 0);
       --Result   : out STD_LOGIC_VECTOR (7 downto 0);
@@ -56,9 +56,9 @@ architecture behaviour of toplevel_tb is
   end component;
 
   -- component ports
-  signal reset    : STD_LOGIC;
---  signal clk_board      : STD_LOGIC:='0';
-signal clk      : STD_LOGIC:='0';
+--  signal reset1    : STD_LOGIC;
+  signal clk_board      : STD_LOGIC:='0';
+--signal clk      : STD_LOGIC:='0';
   --signal w_e_SREG : std_logic_vector(7 downto 0);
   --signal Status   : STD_LOGIC_VECTOR (7 downto 0);
   --signal Result   : STD_LOGIC_VECTOR (7 downto 0);
@@ -81,9 +81,9 @@ begin  -- behaviour
   -- component instantiation
   DUT: toplevel
     port map (
-      reset    => reset,
---      clk_board      => clk_board,
-clk      => clk,
+--      reset1    => reset1,
+      clk_board      => clk_board,
+--clk      => clk,
       --w_e_SREG => w_e_SREG,
       --Status   => Status,
       --Result   => Result,
@@ -100,19 +100,23 @@ clk      => clk,
       );
 
   -- clock generation
---  clk_board <= not clk_board after 10 ns;
-  clk <= not clk after 10 ns;
+  clk_board <= not clk_board after 10 ns;
+--  clk <= not clk after 10 ns;
 
   -- waveform generation
   WaveGen_Proc: process
   begin
     -- insert signal assignments here
-    wait for 20ns;
-    reset <= '1';
+    wait for 10ns;
+    btnC <= '0';
+    wait for 4000ns;
+--    reset1 <= '1';
+btnC <= '1';
     wait for 51ns;
-    reset <= '0';
+--    reset1 <= '0';
+btnC <= '0';
     wait for 20ns;
-    sw <= "1011001100110011";
+    sw <= "0011001100110011";
     wait for 51ns;
     sw <= "0000000000000000";
     wait;
