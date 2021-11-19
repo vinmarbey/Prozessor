@@ -45,7 +45,8 @@ end seven_segment;
 
 architecture Behavioral of seven_segment is
   type state_type is (st1_AN0, st2_AN1, st3_AN2, st4_AN3);
-  signal state, next_state : state_type;
+  signal state : state_type;
+  signal next_state : state_type;
   --Declare internal signals for all outputs of the state-machine
   signal SEG_Anode_tem : std_logic_vector(3 downto 0);
   signal SEG_Kathode_tem : std_logic_vector(7 downto 0);
@@ -91,13 +92,13 @@ begin
       --below is a simple example
       case (state) is
          when st4_AN3 =>
-               next_state <= st3_AN2;
+               next_state <= st1_AN0;
          when st3_AN2 =>
-               next_state <= st2_AN1;
+               next_state <= st4_AN3;
          when st2_AN1 =>
-            next_state <= st1_AN0;
+            next_state <= st3_AN2;
          when others =>
-            next_state <= st4_AN3;
+            next_state <= st2_AN1;
       end case;
    end process;
 

@@ -5,4 +5,30 @@ Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.pkg_processor
+Compiling package xil_defaultlib.pkg_instrmem
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=15.62...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling architecture behavioral of entity xil_defaultlib.Program_Counter [program_counter_default]
+Compiling architecture behavioral of entity xil_defaultlib.prog_mem [prog_mem_default]
+Compiling architecture behavioral of entity xil_defaultlib.decoder [decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.Reg_File [reg_file_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.SREG [sreg_default]
+Compiling architecture behavioral of entity xil_defaultlib.Datamemory [datamemory_default]
+Compiling architecture behavioral of entity xil_defaultlib.seven_segment [seven_segment_default]
+Compiling architecture behavioral of entity xil_defaultlib.toplevel [toplevel_default]
+Compiling architecture behaviour of entity xil_defaultlib.toplevel_tb [toplevel_tb]
+Built simulation snapshot toplevel_tb_behaviour_cfg_behav
