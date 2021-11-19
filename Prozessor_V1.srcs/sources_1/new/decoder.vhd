@@ -45,14 +45,14 @@ entity decoder is
     pop_Stack :out std_logic;                  -- increment enable for stackpointer
     push_Stack :out std_logic;                  -- decrement enable for stackpointer
     add_PC      : out std_logic_vector (8 downto 0);    -- add figure to Programcounter; for RJMP and RCALL
-    pause_PC    : out std_logic                         -- pause increment Programcounter; for RCALL and RET
-    
+    pause_PC    : out std_logic
+--            sreg_auswertung_testpunkt: out std_logic_vector(7 downto 0)                 -- pause increment Programcounter; for RCALL and RET
  
     );
 end decoder;
 
 architecture Behavioral of decoder is
-
+--signal sreg_auswertung_testpunkt:std_logic_vector(7 downto 0);
 begin  -- Behavioral
 
   -- purpose: Decodierprozess
@@ -84,7 +84,7 @@ begin  -- Behavioral
     pop_Stack <= '0';
     push_Stack <= '0';
     pause_PC <= '0';
-    
+--    sreg_auswertung_testpunkt <= "00000000";
     
  
     case Instr(15 downto 10) is
@@ -146,12 +146,14 @@ begin  -- Behavioral
       -- BRBS
       when "111100" =>
         SREG_Auswertung := std_logic_vector(to_unsigned(to_integer(unsigned(Instr(2 downto 0))),8)) and SREG_OUT;
+--        sreg_auswertung_testpunkt <= "11110000";
         if SREG_Auswertung /= "00000000" then
           add_pc <= std_logic_vector(to_signed(to_integer(signed(Instr(9 downto 3))),9));
         end if;
       -- BRBC
       when "111101" =>
         SREG_Auswertung := std_logic_vector(to_unsigned(to_integer(unsigned(Instr(2 downto 0))),8)) and SREG_OUT;
+--        sreg_auswertung_testpunkt <= "11110000";
         if SREG_Auswertung = "00000000" then
           add_pc <= std_logic_vector(to_signed(to_integer(signed(Instr(9 downto 3))),9));
         end if;
@@ -277,6 +279,7 @@ begin  -- Behavioral
             end case;
         end case;
     end case;
+    
   end process dec_mux;
 
 end Behavioral;
