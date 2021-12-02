@@ -10,7 +10,7 @@ C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Data
 C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Program_Counter.vhd,1636026211,vhdl,,,,program_counter,,,,,,,,
 C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/Reg_File.vhd,1636548265,vhdl,,,,reg_file,,,,,,,,
 C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/SREG.vhd,1636548265,vhdl,,,,sreg,,,,,,,,
-C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd,1637338885,vhdl,,,,decoder,,,,,,,,
+C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd,1637479075,vhdl,,,,decoder,,,,,,,,
 C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/pkg_instrmem.vhd,1637145264,vhdl,C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd;C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/toplevel.vhd,,,pkg_instrmem,,,,,,,,
 C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/pkg_processor.vhd,1636103190,vhdl,C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/decoder.vhd,,,pkg_processor,,,,,,,,
 C:/Users/vinma/Xilinx_Projekte/Prozessor_V1/Prozessor_V1.srcs/sources_1/new/prog_mem.vhd,1635791673,vhdl,,,,prog_mem,,,,,,,,
