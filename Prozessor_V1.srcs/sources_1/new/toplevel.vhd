@@ -90,6 +90,10 @@ signal     PINB    :  std_logic_vector(7 downto 0);
 
   -- outputs of "prog_mem_1"
   signal Instr : STD_LOGIC_VECTOR (15 downto 0);
+  
+  -- pipeline1 outputs after "prog_mem_1"
+  signal Instr_pipeline1 : STD_LOGIC_VECTOR (15 downto 0);
+  
 
   -- outputs of "decoder_1"
    signal  addr_opa    : std_logic_vector(4 downto 0);
@@ -106,11 +110,40 @@ signal     PINB    :  std_logic_vector(7 downto 0);
    signal sel_immediate_to_ALU : std_logic;
    signal pop_Stack : std_logic;
    signal push_Stack : std_logic;
+   
+   -- pipeline2 outputs after  "decoder_1"
+   signal  addr_opa_pipeline2    : std_logic_vector(4 downto 0);
+   signal  addr_opb_pipeline2    : std_logic_vector(4 downto 0);
+   signal  OPCODE_pipeline2      : std_logic_vector(4 downto 0);
+   signal  w_e_regfile_pipeline2 : std_logic;
+   signal  w_e_SREG_pipeline2    : std_logic_vector (7 downto 0);
+   signal w_e_Data_pipeline2     : std_logic;
+   signal sel_Data_pipeline2     : std_logic;
+   signal data_immediate_pipeline2 : std_logic_vector (7 downto 0);
+   signal  sel_immediate_pipeline2 : std_logic;
+   signal add_PC_pipeline2        : std_logic_vector (8 downto 0);
+   signal pause_PC_pipeline2      : std_logic;
+   signal sel_immediate_to_ALU_pipeline2 : std_logic;
+   signal pop_Stack_pipeline2 : std_logic;
+   signal push_Stack_pipeline2 : std_logic;
 
   -- outputs of Regfile
   signal data_opa : std_logic_vector (7 downto 0);
   signal data_opb : std_logic_vector (7 downto 0);
   signal Z_Addr   : std_logic_vector (9 downto 0);
+  
+  -- pipeline3 outputs after Regfile
+  signal data_opa_pipeline3 : std_logic_vector (7 downto 0);
+  signal data_opb_pipeline3 : std_logic_vector (7 downto 0);
+  signal Z_Addr_pipeline3   : std_logic_vector (9 downto 0);
+  signal data_immediate_pipeline3 : std_logic_vector (7 downto 0);
+  signal sel_immediate_to_ALU_pipeline3 : std_logic;
+  signal  w_e_SREG_pipeline3    : std_logic_vector (7 downto 0);
+  signal sel_Data_pipeline3     : std_logic;
+  signal w_e_Data_pipeline3     : std_logic;
+  signal  OPCODE_pipeline3      : std_logic_vector(4 downto 0);
+  signal pop_Stack_pipeline3 : std_logic;
+  signal push_Stack_pipeline3 : std_logic;
   
   -- output of ALU
   signal data_res : std_logic_vector(7 downto 0);
@@ -126,6 +159,19 @@ signal     PINB    :  std_logic_vector(7 downto 0);
   signal SEG1_N  : std_logic_vector(7 downto 0);
   signal SEG2_N  : std_logic_vector(7 downto 0);
   signal SEG3_N  : std_logic_vector(7 downto 0);
+  
+  -- pipeline4 output after Datamemory
+  signal DM_Data_out_pipeline4 : std_logic_vector(7 downto 0); 
+  signal SER_pipeline4     : std_logic_vector(3 downto 0);
+  signal SEG0_N_pipeline4  : std_logic_vector(7 downto 0);
+  signal SEG1_N_pipeline4  : std_logic_vector(7 downto 0);
+  signal SEG2_N_pipeline4  : std_logic_vector(7 downto 0);
+  signal SEG3_N_pipeline4  : std_logic_vector(7 downto 0);
+  signal data_res_pipeline4 : std_logic_vector(7 downto 0);
+  signal Status_pipeline4   : std_logic_vector(7 downto 0);
+  signal sel_Data_pipeline4     : std_logic;
+  signal  w_e_SREG_pipeline4    : std_logic_vector (7 downto 0);
+  
 
   -- auxiliary signals
   signal PM_data : std_logic_vector(7 downto 0);  -- used for wiring immediate data
@@ -259,7 +305,7 @@ begin
   Program_Counter_1: Program_Counter
     port map (
       reset => reset,
-      add_PC => add_PC,
+      add_PC => add_PC_pipeline2,
       clk   => clk,
       Addr  => Addr);
 
@@ -272,7 +318,7 @@ begin
   -- instance "decoder_1"
   decoder_1: decoder
     port map (
-      Instr         => Instr,
+      Instr         => Instr_pipeline1,
       --PM_ADDR       => Addr,
       SREG_OUT      => SREG_OUT,
       addr_opa      => addr_opa,
@@ -297,9 +343,9 @@ begin
   Reg_File_1: Reg_File
     port map (
       clk           => clk,
-      addr_opa      => addr_opa,
-      addr_opb      => addr_opb,
-      w_e_regfile   => w_e_regfile,
+      addr_opa      => addr_opa_pipeline2,
+      addr_opb      => addr_opb_pipeline2,
+      w_e_regfile   => w_e_regfile_pipeline2,
       data_opa      => data_opa,
       data_opb      => data_opb,
       Z_Addr        => Z_Addr,
@@ -309,8 +355,8 @@ begin
   -- instance "ALU_1"
   ALU_1: ALU
     port map (
-      OPCODE => OPCODE,
-      OPA    => data_opa,
+      OPCODE => OPCODE_pipeline3,
+      OPA    => data_opa_pipeline3,
       OPB    => Data_B,
       RES    => data_res,
       Status => Status);
@@ -319,8 +365,8 @@ begin
   SREG_1: SREG
     port map (
       clk       => clk,
-      w_e_SREG  => w_e_SREG,
-      Status    => Status,
+      w_e_SREG  => w_e_SREG_pipeline4,
+      Status    => Status_pipeline4,
       SREG_OUT  => SREG_OUT);
     
     -- instance "Datamemory_1"
@@ -328,11 +374,11 @@ begin
     port map (
       clk           => clk,
       reset         => reset,
-      DM_Data_in    => data_opb,
-      DM_Addr       => Z_Addr,
-      w_e_Data      => w_e_Data,
-      pop_Stack=>pop_Stack,
-      push_Stack=>push_Stack,
+      DM_Data_in    => data_opb_pipeline3,
+      DM_Addr       => Z_Addr_pipeline3,
+      w_e_Data      => w_e_Data_pipeline3,
+      pop_Stack=>pop_Stack_pipeline3,
+      push_Stack=>push_Stack_pipeline3,
       DM_Data_out   => DM_Data_out,
       PIND =>PIND,
       PINC =>PINC,
@@ -348,26 +394,95 @@ begin
    Seven_segment_1: seven_segment
      port map ( 
        clk=>clk,
-       SER =>SER,
-       SEG0_N  =>SEG0_N,
-       SEG1_N =>SEG1_N,
-       SEG2_N =>SEG2_N,
-       SEG3_N =>SEG3_N,
+       SER =>SER_pipeline4,
+       SEG0_N  =>SEG0_N_pipeline4,
+       SEG1_N =>SEG1_N_pipeline4,
+       SEG2_N =>SEG2_N_pipeline4,
+       SEG3_N =>SEG3_N_pipeline4,
        SEG_Anode=>SEG_Anode,
        SEG_Kathode=>SEG_Kathode);
+       
+  -- Pipelines
+  -- Pipeline 1 between Programmemory and Decoder
+  pipeline_1: process(clk)
+  begin
+    if clk'event and clk = '1' then
+      Instr_pipeline1 <= Instr;
+        
+    end if;
+  end process pipeline_1;
+  
+  -- Pipeline 2 between Decoder and Registerfile,Datamemory
+  pipeline_2: process(clk)
+  begin
+    if clk'event and clk = '1' then
+      addr_opa_pipeline2            <= addr_opa;
+      addr_opb_pipeline2            <= addr_opb;
+      OPCODE_pipeline2              <= OPCODE;
+      w_e_regfile_pipeline2         <= w_e_regfile;
+      w_e_SREG_pipeline2            <= w_e_SREG;
+      data_immediate_pipeline2      <= data_immediate;
+      sel_immediate_pipeline2       <= sel_immediate;
+      sel_immediate_to_ALU_pipeline2 <= sel_immediate_to_ALU;
+      add_PC_pipeline2              <= add_PC;
+      pause_PC_pipeline2            <= pause_PC;
+      w_e_Data_pipeline2            <= w_e_Data;
+      pop_Stack_pipeline2           <= pop_Stack;
+      push_Stack_pipeline2          <= push_Stack;
+      sel_Data_pipeline2            <= sel_Data;
+        
+    end if;
+  end process pipeline_2;
+  
+  -- Pipeline 3 between Programmemory and Decoder
+  pipeline_3: process(clk)
+  begin
+    if clk'event and clk = '1' then
+      data_opa_pipeline3      <= data_opa;
+      data_opb_pipeline3      <= data_opb;
+      Z_Addr_pipeline3        <= Z_Addr;
+      data_immediate_pipeline3 <= data_immediate_pipeline2;
+      sel_immediate_to_ALU_pipeline3 <= sel_immediate_to_ALU_pipeline2;
+      w_e_SREG_pipeline3 <= w_e_SREG_pipeline2;
+      sel_Data_pipeline3 <= sel_Data_pipeline2;
+      w_e_Data_pipeline3 <= w_e_Data_pipeline2;
+      OPCODE_pipeline3 <= OPCODE_pipeline2;
+      pop_Stack_pipeline3 <= pop_Stack_pipeline2;
+      push_Stack_pipeline3 <= push_Stack_pipeline2;
+      
+    end if;
+  end process pipeline_3;
+  
+  -- Pipeline 4 between DM/ALU and 7-Seg/SREG/OUTMUX
+  pipeline_4: process(clk)
+  begin
+    if clk'event and clk = '1' then
+      sel_Data_pipeline4 <= sel_Data_pipeline3;
+      DM_Data_out_pipeline4 <= DM_Data_out;
+      SER_pipeline4  <= SER;
+      SEG0_N_pipeline4 <= SEG0_N;
+      SEG1_N_pipeline4 <= SEG1_N;
+      SEG2_N_pipeline4 <= SEG2_N;
+      SEG3_N_pipeline4 <= SEG3_N;
+      data_res_pipeline4 <= data_res;
+      Status_pipeline4 <= Status;
+      w_e_SREG_pipeline4 <= w_e_SREG_pipeline3;
+        
+    end if;
+  end process pipeline_4;
   
   -- MUX for either using data_immediate or data_res as input for Regfile
-  PM_Data <= Result_ALU_DM when sel_immediate = '0' else
-              data_immediate;
+  PM_Data <= Result_ALU_DM when sel_immediate_pipeline2 = '0' else
+              data_immediate_pipeline2;
               --Instr(11 downto 8)&Instr(3 downto 0)    ;
   
   -- MUX for either using ouput ALU or output Datamemory 
-  Result_ALU_DM <=  data_res when sel_data = '0' else
-                    DM_Data_out;
+  Result_ALU_DM <=  data_res_pipeline4 when sel_data_pipeline4 = '0' else
+                    DM_Data_out_pipeline4;
   
   -- MUX for either using data from Regfile oder Immediate Data as Input B for ALU  
-  Data_B <= data_opb when sel_immediate_to_ALU = '0' else
-            data_immediate;
+  Data_B <= data_opb_pipeline3 when sel_immediate_to_ALU_pipeline3 = '0' else
+            data_immediate_pipeline3;
   
   -- OUTPUT for Synthesis
   --Result <= Result_ALU_DM;
