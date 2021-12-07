@@ -72,6 +72,7 @@ begin
     process (clk, RAM, push_Stack, reset, stackpointer_tp)
     variable stackpointer : std_logic_vector(9 downto 0);
     begin
+      -- noch entfernen
       stackpointer := stackpointer_tp;
       
         if (clk'event and clk = '1') then

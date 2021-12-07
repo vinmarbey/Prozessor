@@ -51,6 +51,7 @@ end decoder;
 
 architecture Behavioral of decoder is
 --signal sreg_auswertung_testpunkt:std_logic_vector(7 downto 0);
+signal pause_decoder_1_period: std_logic;
 begin  -- Behavioral
 
   -- purpose: Decodierprozess
@@ -82,8 +83,9 @@ begin  -- Behavioral
     pop_Stack <= '0';
     push_Stack <= '0';
     pause_PC <= '0';
+    pause_decoder_1_period <='0';
     
- 
+    if pause_decoder_1_period = '0' then
     case Instr(15 downto 10) is
       -- ADD
       when "000011" =>
@@ -92,6 +94,7 @@ begin  -- Behavioral
         OPCODE <= op_add;
         w_e_regfile <= '1';
         w_e_SREG <= "00111111";
+        
       -- CP
       when "000101" =>
         addr_opa <= Instr(8 downto 4);
@@ -145,12 +148,14 @@ begin  -- Behavioral
         SREG_Auswertung := std_logic_vector(to_unsigned(to_integer(unsigned(Instr(2 downto 0))+1),8)) and SREG_OUT;
         if SREG_Auswertung /= "00000000" then
           add_pc <= std_logic_vector(to_signed(to_integer(signed(Instr(9 downto 3))),9));
+          pause_decoder_1_period <='1';
         end if;
       -- BRBC
       when "111101" =>
         SREG_Auswertung := std_logic_vector(to_unsigned(to_integer(unsigned(Instr(2 downto 0))+1),8)) and SREG_OUT;
         if SREG_Auswertung = "00000000" then
           add_pc <= std_logic_vector(to_signed(to_integer(signed(Instr(9 downto 3))),9));
+          pause_decoder_1_period <='1';
         end if;
         
       when others =>
@@ -196,7 +201,10 @@ begin  -- Behavioral
             sel_immediate <= '1';
           -- RJMP
           when "1100" =>
-            add_pc <= Instr(8 downto 0);
+--            add_pc <= Instr(8 downto 0);
+            add_pc <= std_logic_vector(signed(Instr(8 downto 0))-1);
+            pause_decoder_1_period <='1';
+            
           -- RCALL
           when "1101" =>
             -- pause_PC <= '1';
@@ -274,7 +282,9 @@ begin  -- Behavioral
             end case;
         end case;
     end case;
-    
+    else 
+    pause_decoder_1_period <='0';
+    end if;
   end process dec_mux;
 
 end Behavioral;

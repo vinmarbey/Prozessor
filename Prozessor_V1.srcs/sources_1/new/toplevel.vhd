@@ -192,6 +192,7 @@ signal     PINB    :  std_logic_vector(7 downto 0);
       reset : in  STD_LOGIC;
       add_PC : in std_logic_vector (8 downto 0);
       clk   : in  STD_LOGIC;
+      pause_PC  : in std_logic;
       Addr  : out STD_LOGIC_VECTOR (8 downto 0));
   end component;
 
@@ -307,6 +308,7 @@ begin
       reset => reset,
       add_PC => add_PC_pipeline2,
       clk   => clk,
+      pause_PC => pause_PC,
       Addr  => Addr);
 
   -- instance "prog_mem_1"
@@ -355,8 +357,8 @@ begin
   -- instance "ALU_1"
   ALU_1: ALU
     port map (
-      OPCODE => OPCODE_pipeline3,
-      OPA    => data_opa_pipeline3,
+      OPCODE => OPCODE_pipeline2,
+      OPA    => data_opa,
       OPB    => Data_B,
       RES    => data_res,
       Status => Status);
@@ -477,12 +479,12 @@ begin
               --Instr(11 downto 8)&Instr(3 downto 0)    ;
   
   -- MUX for either using ouput ALU or output Datamemory 
-  Result_ALU_DM <=  data_res_pipeline4 when sel_data_pipeline4 = '0' else
-                    DM_Data_out_pipeline4;
+  Result_ALU_DM <=  data_res when sel_data_pipeline3 = '0' else --pipeline4
+                    DM_Data_out;
   
   -- MUX for either using data from Regfile oder Immediate Data as Input B for ALU  
-  Data_B <= data_opb_pipeline3 when sel_immediate_to_ALU_pipeline3 = '0' else
-            data_immediate_pipeline3;
+  Data_B <= data_opb when sel_immediate_to_ALU = '0' else --pipeline3
+            data_immediate;
   
   -- OUTPUT for Synthesis
   --Result <= Result_ALU_DM;

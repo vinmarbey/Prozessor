@@ -32,6 +32,7 @@ entity Program_Counter is
   port (
     reset : in  std_logic;
     clk   : in  std_logic;
+    pause_PC    : in std_logic;
     add_PC : in std_logic_vector (8 downto 0);
     Addr  : out std_logic_vector (8 downto 0));
 end Program_Counter;

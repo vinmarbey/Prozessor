@@ -107,7 +107,7 @@ begin  -- behaviour
   WaveGen_Proc: process
   begin
     -- insert signal assignments here
-    wait for 10ns;
+    wait for 10000ns;
     btnC <= '0';
     wait for 4000ns;
 --    reset1 <= '1';

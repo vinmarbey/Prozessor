@@ -13,19 +13,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16669700fs"></ZoomStartTime>
-      <ZoomEndTime time="19657879fs"></ZoomEndTime>
-      <Cursor1Time time="10735099fs"></Cursor1Time>
+      <ZoomStartTime time="14161760fs"></ZoomStartTime>
+      <ZoomEndTime time="14364561fs"></ZoomEndTime>
+      <Cursor1Time time="14308460fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="204"></NameColumnWidth>
-      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
-   <wvobject fp_name="/toplevel_tb/DUT/Program_Counter_1/Addr" type="array">
-      <obj_property name="ElementShortName">Addr[8:0]</obj_property>
-      <obj_property name="ObjectShortName">Addr[8:0]</obj_property>
-   </wvobject>
+   <WVObjectSize size="36" />
    <wvobject fp_name="/toplevel_tb/clk_board" type="logic">
       <obj_property name="ElementShortName">clk_board</obj_property>
       <obj_property name="ObjectShortName">clk_board</obj_property>
@@ -41,6 +37,23 @@
    <wvobject fp_name="/toplevel_tb/DUT/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Program_Counter_1/Addr" type="array">
+      <obj_property name="ElementShortName">Addr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">Addr[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/prog_mem_1/Instr" type="array">
+      <obj_property name="ElementShortName">Instr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Instr[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/decoder_1/pause_decoder_1_period" type="logic">
+      <obj_property name="ElementShortName">pause_decoder_1_period</obj_property>
+      <obj_property name="ObjectShortName">pause_decoder_1_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/decoder_1/pause_PC" type="logic">
+      <obj_property name="ElementShortName">pause_PC</obj_property>
+      <obj_property name="ObjectShortName">pause_PC</obj_property>
    </wvobject>
    <wvobject fp_name="/toplevel_tb/sw" type="array">
       <obj_property name="ElementShortName">sw[15:0]</obj_property>
@@ -58,17 +71,34 @@
       <obj_property name="ElementShortName">OPB[7:0]</obj_property>
       <obj_property name="ObjectShortName">OPB[7:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Reg_File_1/addr_opa" type="array">
+      <obj_property name="ElementShortName">addr_opa[4:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_opa[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/decoder_1/addr_opb" type="array">
+      <obj_property name="ElementShortName">addr_opb[4:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_opb[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/decoder_1/sel_immediate" type="logic">
+      <obj_property name="ElementShortName">sel_immediate</obj_property>
+      <obj_property name="ObjectShortName">sel_immediate</obj_property>
+   </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/decoder_1/sel_immediate_to_ALU" type="logic">
+      <obj_property name="ElementShortName">sel_immediate_to_ALU</obj_property>
+      <obj_property name="ObjectShortName">sel_immediate_to_ALU</obj_property>
+   </wvobject>
    <wvobject fp_name="/toplevel_tb/DUT/ALU_1/RES" type="array">
       <obj_property name="ElementShortName">RES[7:0]</obj_property>
       <obj_property name="ObjectShortName">RES[7:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/toplevel_tb/DUT/Reg_File_1/register_speicher" type="array">
+      <obj_property name="ElementShortName">register_speicher[31:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">register_speicher[31:0][7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
    <wvobject fp_name="/toplevel_tb/DUT/SREG_1/SREG_OUT" type="array">
       <obj_property name="ElementShortName">SREG_OUT[7:0]</obj_property>
       <obj_property name="ObjectShortName">SREG_OUT[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/toplevel_tb/DUT/decoder_1/sreg_auswertung_testpunkt" type="array">
-      <obj_property name="ElementShortName">sreg_auswertung_testpunkt[7:0]</obj_property>
-      <obj_property name="ObjectShortName">sreg_auswertung_testpunkt[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/toplevel_tb/DUT/decoder_1/data_immediate" type="array">
       <obj_property name="ElementShortName">data_immediate[7:0]</obj_property>
@@ -110,19 +140,13 @@
       <obj_property name="ElementShortName">data_in[7:0]</obj_property>
       <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/toplevel_tb/DUT/Reg_File_1/register_speicher" type="array">
-      <obj_property name="ElementShortName">register_speicher[31:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">register_speicher[31:0][7:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/toplevel_tb/an" type="array">
       <obj_property name="ElementShortName">an[3:0]</obj_property>
       <obj_property name="ObjectShortName">an[3:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/toplevel_tb/seg" type="array">
       <obj_property name="ElementShortName">seg[6:0]</obj_property>
       <obj_property name="ObjectShortName">seg[6:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/toplevel_tb/DUT/led" type="array">
       <obj_property name="ElementShortName">led[15:0]</obj_property>
