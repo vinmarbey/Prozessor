@@ -157,13 +157,27 @@ begin
 --    DM_Data_out <= RAM(to_integer(unsigned(DM_Addr)));
     
     -- Memory-Mapped Output
-    PORTC <= RAM(53); -- 0x35
-    PORTB <= RAM(56); -- 0x38
-    SER <= RAM(64)(3 downto 0); -- 0x40
-    SEG0_N <= RAM(65); -- 0x41
-    SEG1_N <= RAM(66); -- 0x42
-    SEG2_N <= RAM(67); -- 0x43
-    SEG3_N <= RAM(68); -- 0x44
+--    PORTC <= RAM(53); -- 0x35
+--    PORTB <= RAM(56); -- 0x38
+--    SER <= RAM(64)(3 downto 0); -- 0x40
+--    SEG0_N <= RAM(65); -- 0x41
+--    SEG1_N <= RAM(66); -- 0x42
+--    SEG2_N <= RAM(67); -- 0x43
+--    SEG3_N <= RAM(68); -- 0x44
+----    PORTC <= "00000000"; -- 0x35
+----    PORTB <= "00000000"; -- 0x38
+----    SER <= "0000"; -- 0x40
+----    SEG0_N <= "00000000"; -- 0x41
+----    SEG1_N <= "00000000"; -- 0x42
+----    SEG2_N <= "00000000"; -- 0x43
+----    SEG3_N <= "00000000"; -- 0x44
+      PORTC <= pinc_temp; -- 0x35
+    PORTB <= pinc_temp; -- 0x38
+    SER <= pind_temp(3 downto 0); -- 0x40
+    SEG0_N <= pinc_temp; -- 0x41
+    SEG1_N <= pinb_temp; -- 0x42
+    SEG2_N <= pinc_temp; -- 0x43
+    SEG3_N <= pinb_temp; -- 0x44
 --    I2c_SCR_out <= RAM(80); -- 0x50
 --    I2c_DaTr <= RAM(81); -- 0x51
 
