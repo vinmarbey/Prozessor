@@ -367,8 +367,8 @@ begin
   SREG_1: SREG
     port map (
       clk       => clk,
-      w_e_SREG  => w_e_SREG_pipeline4,
-      Status    => Status_pipeline4,
+      w_e_SREG  => w_e_SREG_pipeline2,
+      Status    => Status,
       SREG_OUT  => SREG_OUT);
     
     -- instance "Datamemory_1"
@@ -376,11 +376,16 @@ begin
     port map (
       clk           => clk,
       reset         => reset,
-      DM_Data_in    => data_opb_pipeline3,
-      DM_Addr       => Z_Addr_pipeline3,
-      w_e_Data      => w_e_Data_pipeline3,
-      pop_Stack=>pop_Stack_pipeline3,
-      push_Stack=>push_Stack_pipeline3,
+--      DM_Data_in    => data_opb_pipeline3,
+--      DM_Addr       => Z_Addr_pipeline3,
+--      w_e_Data      => w_e_Data_pipeline3,
+--      pop_Stack=>pop_Stack_pipeline3,
+--      push_Stack=>push_Stack_pipeline3,
+ DM_Data_in    => data_opb,
+      DM_Addr       => Z_Addr,
+      w_e_Data      => w_e_Data_pipeline2,
+      pop_Stack=>pop_Stack_pipeline2,
+      push_Stack=>push_Stack_pipeline2,
       DM_Data_out   => DM_Data_out,
       PIND =>PIND,
       PINC =>PINC,
@@ -427,7 +432,7 @@ begin
       sel_immediate_pipeline2       <= sel_immediate;
       sel_immediate_to_ALU_pipeline2 <= sel_immediate_to_ALU;
       add_PC_pipeline2              <= add_PC;
-      pause_PC_pipeline2            <= pause_PC;
+--      pause_PC_pipeline2            <= pause_PC;
       w_e_Data_pipeline2            <= w_e_Data;
       pop_Stack_pipeline2           <= pop_Stack;
       push_Stack_pipeline2          <= push_Stack;
@@ -440,17 +445,17 @@ begin
   pipeline_3: process(clk)
   begin
     if clk'event and clk = '1' then
-      data_opa_pipeline3      <= data_opa;
-      data_opb_pipeline3      <= data_opb;
-      Z_Addr_pipeline3        <= Z_Addr;
-      data_immediate_pipeline3 <= data_immediate_pipeline2;
-      sel_immediate_to_ALU_pipeline3 <= sel_immediate_to_ALU_pipeline2;
+--      data_opa_pipeline3      <= data_opa;
+--      data_opb_pipeline3      <= data_opb;
+--      Z_Addr_pipeline3        <= Z_Addr;
+--      data_immediate_pipeline3 <= data_immediate_pipeline2;
+--      sel_immediate_to_ALU_pipeline3 <= sel_immediate_to_ALU_pipeline2;
       w_e_SREG_pipeline3 <= w_e_SREG_pipeline2;
-      sel_Data_pipeline3 <= sel_Data_pipeline2;
-      w_e_Data_pipeline3 <= w_e_Data_pipeline2;
-      OPCODE_pipeline3 <= OPCODE_pipeline2;
-      pop_Stack_pipeline3 <= pop_Stack_pipeline2;
-      push_Stack_pipeline3 <= push_Stack_pipeline2;
+--      sel_Data_pipeline3 <= sel_Data_pipeline2;
+--      w_e_Data_pipeline3 <= w_e_Data_pipeline2;
+--      OPCODE_pipeline3 <= OPCODE_pipeline2;
+--      pop_Stack_pipeline3 <= pop_Stack_pipeline2;
+--      push_Stack_pipeline3 <= push_Stack_pipeline2;
       
     end if;
   end process pipeline_3;
@@ -459,14 +464,14 @@ begin
   pipeline_4: process(clk)
   begin
     if clk'event and clk = '1' then
-      sel_Data_pipeline4 <= sel_Data_pipeline3;
-      DM_Data_out_pipeline4 <= DM_Data_out;
+--      sel_Data_pipeline4 <= sel_Data_pipeline3;
+--      DM_Data_out_pipeline4 <= DM_Data_out;
       SER_pipeline4  <= SER;
       SEG0_N_pipeline4 <= SEG0_N;
       SEG1_N_pipeline4 <= SEG1_N;
       SEG2_N_pipeline4 <= SEG2_N;
       SEG3_N_pipeline4 <= SEG3_N;
-      data_res_pipeline4 <= data_res;
+--      data_res_pipeline4 <= data_res;
       Status_pipeline4 <= Status;
       w_e_SREG_pipeline4 <= w_e_SREG_pipeline3;
         
@@ -479,11 +484,11 @@ begin
               --Instr(11 downto 8)&Instr(3 downto 0)    ;
   
   -- MUX for either using ouput ALU or output Datamemory 
-  Result_ALU_DM <=  data_res when sel_data_pipeline3 = '0' else --pipeline4
+  Result_ALU_DM <=  data_res when sel_data_pipeline2 = '0' else --pipeline4
                     DM_Data_out;
   
   -- MUX for either using data from Regfile oder Immediate Data as Input B for ALU  
-  Data_B <= data_opb when sel_immediate_to_ALU = '0' else --pipeline3
+  Data_B <= data_opb when sel_immediate_to_ALU_pipeline2 = '0' else --pipeline3
             data_immediate;
   
   -- OUTPUT for Synthesis

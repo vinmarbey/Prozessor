@@ -60,6 +60,7 @@ begin  -- Behavioral
   -- outputs: addr_opa, addr_opb, OPCODE, w_e_regfile, w_e_SREG, ...
   dec_mux: process (Instr,SREG_OUT)
   variable SREG_Auswertung : std_logic_vector(7 downto 0);
+  variable instr_temp: std_logic_vector(15 downto 0);
   begin  -- process dec_mux
 
 
@@ -69,6 +70,7 @@ begin  -- Behavioral
     -- evtl zuerst abprüfen ob RCALL oder RET, um den hier implementierten PUSH und POP zu nutzen
     
     -- Vorzuweisung der Signale, um Latches zu verhindern
+    instr_temp := Instr;
     addr_opa <= "00000";
     addr_opb <= "00000";
     OPCODE <= op_nop;
@@ -86,7 +88,10 @@ begin  -- Behavioral
     pause_decoder_1_period <='0';
     
     if pause_decoder_1_period = '0' then
-    case Instr(15 downto 10) is
+--        instr_temp := "0000000000000000";
+--    end if;
+    
+    case instr_temp(15 downto 10) is
       -- ADD
       when "000011" =>
         addr_opa <= Instr(8 downto 4);
@@ -159,7 +164,7 @@ begin  -- Behavioral
         end if;
         
       when others =>
-        case Instr(15 downto 12) is
+        case instr_temp(15 downto 12) is
           -- CPI
           when "0011" =>
             addr_opa <= '1' & Instr(7 downto 4);
@@ -210,7 +215,7 @@ begin  -- Behavioral
             -- pause_PC <= '1';
             
           when others => 
-            case Instr(15 downto 9) & Instr (3 downto 0) is
+            case instr_temp(15 downto 9) & Instr (3 downto 0) is
               -- LD
               when "10000000000" =>
                 addr_opa <= Instr(8 downto 4);
@@ -264,7 +269,7 @@ begin  -- Behavioral
                 w_e_regfile <= '1';
                 sel_Data <= '1';
               when others =>
-                case Instr(15 downto 0) is
+                case instr_temp(15 downto 0) is
                   -- SEC
                   when "1001010000001000" =>
                     OPCODE <= op_sec;
@@ -282,8 +287,8 @@ begin  -- Behavioral
             end case;
         end case;
     end case;
-    else 
-    pause_decoder_1_period <='0';
+--    else
+--    pause_decoder_1_period <='0';
     end if;
   end process dec_mux;
 
